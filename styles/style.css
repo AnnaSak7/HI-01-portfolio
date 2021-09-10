@@ -132,7 +132,7 @@
 
 body {
   background-color: #131313;
-  color: #fff;
+  color: #ccc5b9;
 }
 
 img.logo-image {
@@ -155,8 +155,8 @@ h2 {
   background-image: url("https://cdn.pixabay.com/photo/2015/12/08/00/36/woman-1081873_960_720.jpg");
   background-size: cover;
   background-attachment: fixed;
-  min-height: 500px;
-  width: 100%;
+  min-height: 100vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,7 +176,7 @@ h2 {
 }
 
 .banner-text-h1 {
-  font-size: 5em;
+  font-size: 2em;
 }
 
 .banner-text p {
@@ -248,6 +248,8 @@ video {
 }
 
 .txt-coming-soon {
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -262,10 +264,19 @@ video {
 .coming-soon {
   width: 300px;
   height: 300px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+}
+
+.coming-soon h1 {
+  color: #131313;
+  font-size: 3rem;
+  text-shadow: -1px 1px 0 #fff, 1px 1px 0 #000, 1px -1px 0 #fff, -1px -1px 0 #000;
 }
 
 /* CV ---------------*/
@@ -401,6 +412,54 @@ video {
           justify-content: space-between;
 }
 
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.my-1 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
+.progress-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .workexp-names,
 .education-names {
   width: 100%;
@@ -470,6 +529,7 @@ video {
   border: none;
   border-radius: 3px;
   background-color: #1b1b1b;
+  font-size: 16px;
 }
 
 .contact-input-container input::-webkit-input-placeholder,
