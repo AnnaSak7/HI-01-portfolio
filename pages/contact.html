@@ -4,30 +4,112 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar">
-        <div class="hamburger-menu">
-          <div class="line line-1"></div>
-          <div class="line line-2"></div>
-          <div class="line line-3"></div>
+    <header>
+      <label class="logo">
+        <a href="#" role="banner" title="kamon">
+          <img
+            class="logo-image"
+            id="header-img"
+            src="../images/kamon.png"
+            alt="kamon"
+            itemprop="logo"
+          />
+        </a>
+      </label>
+
+      <div class="container">
+        <nav class="navbar">
+          <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+          </div>
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="cv.html">CV</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="contact-container">
+        <h1 id="contact-me">Contact Me</h1>
+        <div class="contactme-p">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
+            asperiores provident explicabo doloremque debitis earum quas.
+            Consequatur, mollitia amet voluptate placeat fugit labore laborum
+            cumque, odit atque ducimus, quisquam earum!
+          </p>
         </div>
-        <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/cv.html">CV</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/gallery.html">Gallery</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+        <div class="form-container">
+          <form>
+            <div class="form-container__contact">
+              <div class="contact-input-container">
+              <input
+                class="contact-inputs"
+                type="text"
+                placeholder="Name"
+                name="name"
+              />
+              <label
+                class="
+                  input__label input__label--hoshi input__label--hoshi-color-2
+                "
+              ></label>
+             </div>
+              <div class="contact-input-container">
+              <input
+                class="contact-inputs"
+                type="text"
+                placeholder="Email"
+                name="email"
+              />
+             </div>
+              <div class="contact-input-container">
+              <input
+                class="contact-inputs"
+                type="text"
+                placeholder="Subject"
+                name="subject"
+              />
+              </div>
+              <div class="contact-input-container">
+              <textarea
+                class="contact-inputs"
+                placeholder="Message"
+                name="msg"
+                cols="30"
+                rows="10"
+              ></textarea>
+              </div>
+            </div>  
+            <div class="contact-btn-container">
+                <div class="contact-send-container">
+                 <button class="contact-send-container__btn">
+                  Send message
+                  </button>
+                </div>
+            </div>
+             
+          </form>
+        </div>
+        </div>
+      </div>
+    </main>
+
     <script src="../scripts/script.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@
   font-family: "Heebo", sans-serif;
 }
 body {
-  background-color: #060610;
+  background-color: #131313;
   color: #fff;
 }
 
@@ -21,10 +21,11 @@ img.logo-image {
 .header {
   position: fixed;
   width: 100vw;
-  background-color: rgba(6, 6, 16, 0.8);
+  //background-color: rgba(6, 6, 16, 0.8);
 }
 h2 {
   font-family: "Heebo", sans-serif;
+  color: #808080;
 }
 
 /* banner------------*/
@@ -38,7 +39,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  color: #0c9091;
+  color: #0abfbc;
   font-family: "Staatliches", cursive;
 
   &__text {
@@ -128,9 +129,6 @@ video {
 
 /* CV ---------------*/
 
-.cv-section {
-  width: 100vw;
-}
 .profile-container {
   display: flex;
   flex-direction: column;
@@ -154,6 +152,7 @@ video {
       width: 50vw;
       display: block;
       font-size: 15vw;
+      color: #0abfbc;
       margin-bottom: 20px;
       font-family: "Staatliches", cursive;
       overflow-wrap: break-word;
@@ -161,39 +160,44 @@ video {
   }
 }
 
-.aboutme {
+.aboutme,
+.contactme-p {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 85vw;
   padding: 20px;
-  border: 1px solid #fff;
+  //border: 1px solid #fff;
   border-radius: 10px;
 }
 
-.info-container {
+.cards-container,
+.contact-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 100vw;
-  padding: 20px;
-  border: 1px solid #fff;
-  border-radius: 10px;
+  align-items: center;
+  margin: 10px 20px;
 }
 
 .skills-container,
 .workexp-container,
-.education-container {
+.education-container,
+.info-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 85vw;
   padding: 20px;
-  border: 1px solid #fff;
-  border-radius: 10px;
+  border-radius: 7px;
+  margin: 20px 20px;
+  background-color: #1b1b1b;
+}
+
+.info-container {
+  align-items: flex-start;
 }
 
 .skills-container__items {
@@ -214,4 +218,99 @@ video {
   display: flex;
   justify-content: center;
   margin: auto;
+}
+
+/* Contact ---------------*/
+
+#contact-me {
+  font-size: 2.5em;
+  color: #0abfbc;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  padding: 20px;
+  //border: 1px solid #fff;
+  border-radius: 10px;
+  height: auto;
+}
+.contact-input-container {
+  width: 80vw;
+  input,
+  textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: #1b1b1b;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 1rem;
+    color: #7a7a7a;
+    opacity: 0.4;
+  }
+}
+
+.contact-inputs {
+  width: 80vw;
+  margin: 10px 0;
+}
+
+.contact-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 85vw;
+  padding: 0 20px;
+}
+.contact-send-container {
+  padding: 10px;
+  background-color: #1b1b1b;
+  border: 1px solid #0abfbc;
+
+  &__btn {
+    background-color: #1b1b1b;
+    border: none;
+    color: #0abfbc;
+    font-size: 1.2rem;
+  }
+}
+
+.input__label--hoshi::before,
+.input__label--hoshi::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.input__label--hoshi::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.input__label--hoshi::after {
+  margin-top: 2px;
+  border-bottom: 2px solid #08fdd8;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.3s;
+}
+
+.input__labe--hoshi-color-2::after {
+  border-color: #0fa;
 }
