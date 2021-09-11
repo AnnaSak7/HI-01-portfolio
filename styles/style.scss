@@ -1,7 +1,5 @@
 @import "nav.scss";
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -248,6 +246,10 @@ video {
   white-space: nowrap;
 }
 
+.bgColor {
+  background-color: #f41545;
+}
+
 *,
 ::after,
 ::before {
@@ -362,6 +364,3 @@ video {
 .input__labe--hoshi-color-2::after {
   border-color: #0fa;
 }
-
-
-

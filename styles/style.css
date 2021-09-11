@@ -454,6 +454,10 @@ video {
   white-space: nowrap;
 }
 
+.bgColor {
+  background-color: #f41545;
+}
+
 *,
 ::after,
 ::before {
