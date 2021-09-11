@@ -418,6 +418,7 @@ video {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
 }
 
 .my-1 {

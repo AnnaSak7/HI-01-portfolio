@@ -1,5 +1,7 @@
 @import "nav.scss";
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -220,6 +222,7 @@ video {
 .row {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 .my-1 {
   margin-top: 0.5rem !important;
@@ -359,3 +362,6 @@ video {
 .input__labe--hoshi-color-2::after {
   border-color: #0fa;
 }
+
+
+
