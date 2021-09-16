@@ -1,4 +1,5 @@
 @import "nav.scss";
+@import "portfolio.scss";
 
 * {
   margin: 0;
@@ -16,6 +17,7 @@ body {
 img.logo-image {
   height: 85px;
   padding: 20px 10px;
+  position: fixed;
 }
 
 .header {
@@ -28,41 +30,37 @@ h2 {
   color: #808080;
 }
 
-/* banner------------*/
+/*index page -----------------------*/
 
-.banner {
-  background-image: url("https://cdn.pixabay.com/photo/2015/12/08/00/36/woman-1081873_960_720.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  color: #0abfbc;
-  font-family: "Staatliches", cursive;
-
-  &__text {
-    padding: 2rem;
+.coverImg {
+  img {
+    height: 100vh;
   }
 }
+/* caption text */
+.text {
+  color: #0abfbc;
+  font-size: 3rem;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: left;
 
-.banner-text-h1 {
-  font-size: 2em;
-}
-
-.banner-text p {
-  color: #5c4d7d;
+  p {
+    font-size: 15px;
+    color: #f4a261;
+  }
 }
 
 .social-media {
   display: flex;
   justify-content: flex-start;
-  padding-left: 2rem;
-}
+  font-size: 25px;
 
-.socialmedia-img {
-  margin: 0.5rem;
+  &__img {
+    margin: 1rem 1rem;
+  }
 }
 
 .icon {
@@ -73,33 +71,6 @@ h2 {
   color: #b7094c;
 }
 
-/* cards --------------------
-
-.container-cards {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 3rem;
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #fff;
-  width: 10rem;
-  height: 15rem;
-}
-
-.card-text a {
-  color: #f5dfbb;
-  font-size: 2rem;
-}
-
-.card-text a:hover {
-  color: #0c9091;
-}
-*/
 /*Gallery page ---------------------*/
 video {
   object-fit: cover;

@@ -120,6 +120,57 @@
           transform: scaleX(1);
 }
 
+.portfolio-row {
+  display: -ms-flexbox;
+  /* IE10 */
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.portfolio-column {
+  -ms-flex: 25%;
+  /* IE10 */
+  -webkit-box-flex: 25%;
+          flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.portfolio-column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.portfolio-column img:hover {
+  opacity: 0.5;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .portfolio-column {
+    -ms-flex: 50%;
+    -webkit-box-flex: 50%;
+            flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .portfolio-column {
+    -ms-flex: 100%;
+    -webkit-box-flex: 100%;
+            flex: 100%;
+    max-width: 100%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -138,6 +189,7 @@ body {
 img.logo-image {
   height: 85px;
   padding: 20px 10px;
+  position: fixed;
 }
 
 .header {
@@ -150,37 +202,25 @@ h2 {
   color: #808080;
 }
 
-/* banner------------*/
-.banner {
-  background-image: url("https://cdn.pixabay.com/photo/2015/12/08/00/36/woman-1081873_960_720.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-  width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+/*index page -----------------------*/
+.coverImg img {
+  height: 100vh;
+}
+
+/* caption text */
+.text {
   color: #0abfbc;
-  font-family: "Staatliches", cursive;
+  font-size: 3rem;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: left;
 }
 
-.banner__text {
-  padding: 2rem;
-}
-
-.banner-text-h1 {
-  font-size: 2em;
-}
-
-.banner-text p {
-  color: #5c4d7d;
+.text p {
+  font-size: 15px;
+  color: #f4a261;
 }
 
 .social-media {
@@ -190,11 +230,11 @@ h2 {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding-left: 2rem;
+  font-size: 25px;
 }
 
-.socialmedia-img {
-  margin: 0.5rem;
+.social-media__img {
+  margin: 1rem 1rem;
 }
 
 .icon {
@@ -205,33 +245,6 @@ h2 {
   color: #b7094c;
 }
 
-/* cards --------------------
-
-.container-cards {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 3rem;
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #fff;
-  width: 10rem;
-  height: 15rem;
-}
-
-.card-text a {
-  color: #f5dfbb;
-  font-size: 2rem;
-}
-
-.card-text a:hover {
-  color: #0c9091;
-}
-*/
 /*Gallery page ---------------------*/
 video {
   -o-object-fit: cover;
