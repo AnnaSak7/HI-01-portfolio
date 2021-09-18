@@ -150,13 +150,12 @@ video {
   border-radius: 10px;
 }
 
-.cards-container,
-.contact-container {
+.cards-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px 20px;
+  margin: 50px 20px;
 }
 
 .skills-container,
@@ -187,6 +186,7 @@ video {
 
 .row {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -237,11 +237,25 @@ video {
   margin: auto;
 }
 
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
 /* Contact ---------------*/
 
-#contact-me {
-  font-size: 2.5em;
-  color: #0abfbc;
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 300px 20px;
+
+  h1 {
+    font-size: 5rem;
+    color: #0abfbc;
+  }
 }
 
 .form-container {
