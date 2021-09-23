@@ -251,7 +251,7 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 300px 20px;
+  margin-top: 300px;
   width: 100vw;
 
   h1 {
@@ -310,7 +310,7 @@ video {
   bottom: 0;
   height: 2px;
   background-color: red;
-  transition: transform 300ms ease-in-out;
+  transition: transform 600ms ease-in-out;
   transform-origin: 0;
   transform: scaleX(0);
 }
@@ -338,6 +338,7 @@ video {
   padding: 30px;
   margin-top: 50px;
   margin-right: 20px;
+  outline: none;
 
   transition: color 300ms ease-in-out;
   z-index: 1;
@@ -369,21 +370,8 @@ video {
   color: #1b1b1b;
 }
 
-// .contact-btn:hover:before {
-//   animation: btn 3s linear forwards;
-//   color: #1b1b1b;
-// }
-
-// @keyframes btn {
-//   0% {
-//     width: 0;
-//     background-color: #1b1b1b;
-//     color: #0abfbc;
-//   }
-
-//   100% {
-//     width: 100%;
-//     background-olor: #0abfbc;
-//     color: #1b1b1b;
-//   }
-// }
+@media screen and (min-width: 600px) and (max-width: 1200) {
+  .form {
+    max-width: 500px;
+  }
+}
