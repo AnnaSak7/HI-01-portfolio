@@ -31,25 +31,27 @@ h2 {
 .coverImg {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  margin-top: 17rem;
 
   img {
-    margin: 300px 0;
+    width: 60vw;
+    height: auto;
   }
 }
 
 /* caption text */
 .text {
   color: #0abfbc;
-  font-size: 3rem;
+  font-size: 6rem;
+  font-weight: 900;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
-  width: 100%;
+  top: 50%;
+  left: 5%;
   text-align: left;
 
   p {
-    font-size: 15px;
+    font-size: 2rem;
     color: #f4a261;
   }
 }
