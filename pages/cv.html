@@ -31,7 +31,7 @@
 
     <title>Anna Sakurai portfolio - CV</title>
   </head>
-  <body>
+  <body onload="addIcons()">
     <header>
       <img
         class="logo-image"
@@ -56,9 +56,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">CV</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gallery.html">Gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
@@ -249,7 +246,12 @@
         <section>
           <div class="info-container">
             <div class="email">
-              <p>Email: <a href="#">annasakurai@hotmail.com</a></p>
+              <p>
+                Email:
+                <a href="mailto:annasakurai7@hotmail.com"
+                  >annasakurai7@hotmail.com</a
+                >
+              </p>
             </div>
             <div class="phonenumber">
               <p>Tel: +46 XXX 69 68 67<a href="#"></a></p>
@@ -258,20 +260,26 @@
               <p>Address: 172 66 Sundbyberg, Sweden</p>
             </div>
 
-            <div class="cv-social-media">
-              <div class="socialmedia-img">
-                <a class="icon" href="#"><i class="fab fa-github"></i></a>
+            <div class="social-media sm--cv" id="sm">
+              <div class="social-media__img">
+                <a class="icon" href="https://github.com/AnnaSak7"
+                  ><i class="fab fa-github"></i
+                ></a>
               </div>
-              <div class="socialmedia-img">
-                <a class="icon" href="#"><i class="fab fa-linkedin"></i></a>
+              <div class="social-media__img">
+                <a
+                  class="icon"
+                  href="https://www.linkedin.com/in/anna-sakurai-111-11101"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
               </div>
-              <div class="socialmedia-img">
+              <div class="social-media__img">
                 <a class="icon" href="#"><i class="fab fa-instagram"></i></a>
               </div>
-              <div class="socialmedia-img">
+              <div class="social-media__img">
                 <a class="icon" href="#"><i class="fab fa-facebook-f"></i></a>
               </div>
-              <div class="socialmedia-img">
+              <div class="social-media__img">
                 <a class="icon" href="#"><i class="fab fa-twitter"></i></a>
               </div>
             </div>

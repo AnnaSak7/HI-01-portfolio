@@ -1,0 +1,35 @@
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content-gallery {
+  position: fixed;
+}
+
+.txt-coming-soon {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coming-soon {
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    color: $bgblack;
+    font-size: 3rem;
+    text-shadow: -1px 1px 0 #fff, 1px 1px 0 #000, 1px -1px 0 #fff,
+      -1px -1px 0 #000;
+  }
+}

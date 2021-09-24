@@ -146,7 +146,7 @@ img.logo-image {
 
 h2 {
   font-family: "Heebo", sans-serif;
-  color: #808080;
+  color: #7a7a7a;
 }
 
 /*index page -----------------------*/
@@ -157,7 +157,10 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 17rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
 }
 
 .coverImg img {
@@ -186,71 +189,66 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  font-size: 25px;
 }
 
 .social-media__img {
-  margin: 1rem 1rem;
+  margin: 1.5rem 1.5rem;
 }
 
-.icon {
-  color: #f5dfbb;
+.sm {
+  font-size: 3.7rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.icon:hover {
-  color: #b7094c;
-}
-
-/*Gallery page ---------------------*/
-video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.content-gallery {
-  position: fixed;
-}
-
-.txt-coming-soon {
-  width: 100vw;
-  height: 100vh;
+.sm--cv {
+  font-size: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin: auto;
 }
 
-.coming-soon {
-  width: 300px;
-  height: 300px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
+.icon i {
+  color: #f5dfbb;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: -webkit-transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045), -webkit-transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.coming-soon h1 {
-  color: #131313;
-  font-size: 3rem;
-  text-shadow: -1px 1px 0 #fff, 1px 1px 0 #000, 1px -1px 0 #fff, -1px -1px 0 #000;
+.icon:hover i {
+  color: #b7094c;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: -webkit-transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+@media screen and (min-width: 600px) {
+  .coverImg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .coverImg img {
+    width: auto;
+    height: 80vh;
+  }
+}
+
+/*Portfolio page ---------------------*/
 /* CV ---------------*/
 .profile-container {
   display: -webkit-box;
@@ -364,12 +362,6 @@ video {
   background-color: #1b1b1b;
 }
 
-.info-container {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
 .skills-container__items {
   width: 100%;
   display: -webkit-box;
@@ -434,7 +426,7 @@ video {
 }
 
 .bgColor {
-  background-color: #f41545;
+  background-color: #b7094c;
 }
 
 .workexp-names,
@@ -449,14 +441,13 @@ video {
           flex-direction: column;
 }
 
-.cv-social-media {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.info-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: auto;
 }
 
 /* Contact ---------------*/
@@ -565,7 +556,7 @@ video {
   right: 0;
   bottom: 0;
   height: 2px;
-  background-color: red;
+  background-color: #f80b0b;
   -webkit-transition: -webkit-transform 600ms ease-in-out;
   transition: -webkit-transform 600ms ease-in-out;
   transition: transform 600ms ease-in-out;

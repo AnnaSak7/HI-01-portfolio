@@ -34,9 +34,6 @@
               <a class="nav-link" href="cv.html">CV</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
@@ -53,7 +50,9 @@
             Consequatur, mollitia amet voluptate placeat fugit labore laborum
           </p>
         </div>
-          <form class="form">
+          <form class="form"
+          action="https://formsubmit.co/zenasak@gmail.com"
+            method="POST">
             
             <div class="form__containers">
               <div class="contact-inputs underline border-underline">
@@ -62,14 +61,16 @@
                 type="text"
                 placeholder="Name"
                 name="name"
+                required
               />
              </div>
               <div class="contact-inputs underline border-underline">
                 <input
                 class="contact-inputs__box"
-                type="text"
+                type="email"
                 placeholder="Email"
                 name="email"
+                required
               />
              </div>
               <div class="contact-inputs underline border-underline">
@@ -87,6 +88,7 @@
                 name="msg"
                 cols="30"
                 rows="10"
+                required
               ></textarea>
               </div>
             </div>  
