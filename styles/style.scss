@@ -1,5 +1,6 @@
-@import "nav.scss";
-@import "variables.scss";
+@import 'nav.scss';
+@import 'variables.scss';
+@import 'portfolio.scss';
 
 * {
   margin: 0;
@@ -7,11 +8,13 @@
   text-decoration: none;
   list-style-type: none;
   box-sizing: border-box;
-  font-family: "Heebo", sans-serif;
+  font-family: 'Heebo', sans-serif;
 }
 body {
   background-color: #131313;
   color: #ccc5b9;
+  justify-content: center;
+  align-items: center;
 }
 
 img.logo-image {
@@ -23,7 +26,7 @@ img.logo-image {
 }
 
 h2 {
-  font-family: "Heebo", sans-serif;
+  font-family: 'Heebo', sans-serif;
   color: $gray;
 }
 
@@ -132,13 +135,48 @@ h2 {
       font-size: 15vw;
       color: $tq;
       margin-bottom: 20px;
-      font-family: "Staatliches", cursive;
+      font-family: 'Staatliches', cursive;
       overflow-wrap: break-word;
     }
   }
 }
 
-.aboutme,
+@media screen and (min-width: 600px) {
+  .profile-container {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-top: 5rem;
+    gap: 20px;
+
+    &__img img {
+      align-content: center;
+      grid-column: 2/3;
+      grid-row: 1/2;
+      width: 15rem;
+      height: auto;
+    }
+
+    &__name {
+      grid-column: 1/2;
+      grid-row: 1/2;
+
+      h1 {
+        font-size: 10vw;
+        color: $tq;
+        font-family: 'Staatliches', cursive;
+        overflow-wrap: break-word;
+        text-align: right;
+      }
+      p {
+        text-align: right;
+      }
+    }
+  }
+}
+
 .contactme-p {
   display: flex;
   flex-direction: column;
@@ -159,9 +197,6 @@ h2 {
   margin: 50px 20px;
 }
 
-.skills-container,
-.workexp-container,
-.education-container,
 .info-container {
   display: flex;
   flex-direction: column;
@@ -172,6 +207,13 @@ h2 {
   border-radius: 7px;
   margin: 20px 20px;
   background-color: $bgblack;
+}
+
+.workexp-names,
+.education-names {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .skills-container__items {
@@ -189,29 +231,29 @@ h2 {
   align-items: center;
 }
 
-.my-1 {
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-}
+// .my-1 {
+//   margin-top: 0.5rem !important;
+//   margin-bottom: 0.5rem !important;
+// }
 
-.progress {
-  display: flex;
-  height: 1rem;
-  overflow: hidden;
-  font-size: 0.75rem;
-  background-color: #e9ecef;
-  border-radius: 0.25rem;
-}
+// .progress {
+//   display: flex;
+//   height: 1rem;
+//   overflow: hidden;
+//   font-size: 0.75rem;
+//   background-color: #e9ecef;
+//   border-radius: 0.25rem;
+// }
 
-.progress-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-}
+// .progress-bar {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   overflow: hidden;
+//   color: #fff;
+//   text-align: center;
+//   white-space: nowrap;
+// }
 
 .bgColor {
   background-color: $red;
@@ -223,32 +265,46 @@ h2 {
 //   box-sizing: border-box;
 // }
 
-.workexp-names,
-.education-names {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.info-container {
-  align-items: center;
-  justify-content: center;
-}
-
 /* Contact ---------------*/
+.contact-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 5fr 4fr;
+  grid-template-areas:
+    'contact-box__form contact-box__info'
+    'contact-box__form contact-box__map';
+  grid-gap: 20px;
 
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 300px;
-  width: 100vw;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+    width: 100vw;
 
-  h1 {
-    font-size: 5rem;
-    color: $tq;
+    h1 {
+      font-size: 5rem;
+      color: $tq;
+    }
   }
+
+  &__form {
+    grid-area: form;
+  }
+
+  &__info {
+    grid-area: info;
+  }
+
+  &__map {
+    grid-area: map;
+  }
+}
+
+.contact {
+  padding: 40px;
 }
 
 .form {
@@ -295,7 +351,7 @@ h2 {
 
 .border-underline::before {
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   right: 0;
   bottom: 0;
@@ -337,7 +393,7 @@ h2 {
 
 .contact-btn::before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   bottom: 0;

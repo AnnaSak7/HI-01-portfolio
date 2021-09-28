@@ -3,103 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Contact page for Portfolio of Anna Sakurai, web developer / front end developer" />
+    <meta
+      name="description"
+      content="Contact page for Portfolio of Anna Sakurai, web developer / front end developer"
+    />
     <link rel="stylesheet" href="../styles/style.css" />
     <title>Anna Sakurai portfolio - contact</title>
   </head>
   <body>
     <header>
-        <img
-          class="logo-image"
-          id="header-img"
-          src="../images/kamon.png"
-          alt="kamon logo"
-          itemprop="logo"
-        />
+      <img
+        class="logo-image"
+        id="header-img"
+        src="../images/kamon.png"
+        alt="kamon logo"
+        itemprop="logo"
+      />
 
-        <nav class="navbar">
-          <div class="hamburger-menu">
-            <div class="line line-1"></div>
-            <div class="line line-2"></div>
-            <div class="line line-3"></div>
-          </div>
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cv.html">CV</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="hamburger-menu">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cv.html">CV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <div class="contact-container">
-        <h1>Contact Me</h1>
-        <div class="contactme-p">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
-            asperiores provident explicabo doloremque debitis earum quas.
-            Consequatur, mollitia amet voluptate placeat fugit labore laborum
-          </p>
-        </div>
-          <form class="form"
-          action="https://formsubmit.co/zenasak@gmail.com"
-            method="POST">
-            
+      <div class="contact-box">
+        <div class="contact-box__form contact">
+          <h1>Contact Me</h1>
+          <div class="contactme-p">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
+              asperiores provident explicabo doloremque debitis earum quas.
+              Consequatur, mollitia amet voluptate placeat fugit labore laborum
+            </p>
+          </div>
+          <form
+            class="form"
+            action="https://formsubmit.co/4240e9b6b21b01739e716e84804b66bf"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New eamil!!" />
             <div class="form__containers">
               <div class="contact-inputs underline border-underline">
                 <input
-                class="contact-inputs__box"
-                type="text"
-                placeholder="Name"
-                name="name"
-                required
-              />
-             </div>
-              <div class="contact-inputs underline border-underline">
-                <input
-                class="contact-inputs__box"
-                type="email"
-                placeholder="Email"
-                name="email"
-                required
-              />
-             </div>
-              <div class="contact-inputs underline border-underline">
-                <input
-                class="contact-inputs__box"
-                type="text"
-                placeholder="Subject"
-                name="subject"
-              />
+                  class="contact-inputs__box"
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  required
+                />
               </div>
               <div class="contact-inputs underline border-underline">
-              <textarea
-                class="contact-inputs__box"
-                placeholder="Message"
-                name="msg"
-                cols="30"
-                rows="10"
-                required
-              ></textarea>
+                <input
+                  class="contact-inputs__box"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  required
+                />
               </div>
-            </div>  
-            <div class="form__containers contact-btn-container">
-                 <button class="contact-btn" type="submit">
-                  Send message
-                  </button>
+              <div class="contact-inputs underline border-underline">
+                <input
+                  class="contact-inputs__box"
+                  type="text"
+                  placeholder="Subject"
+                  name="subject"
+                />
+              </div>
+              <div class="contact-inputs underline border-underline">
+                <textarea
+                  class="contact-inputs__box"
+                  placeholder="Message"
+                  name="msg"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
+              </div>
             </div>
-             
+            <div class="form__containers contact-btn-container">
+              <button class="contact-btn" type="submit">Send message</button>
+            </div>
+            <input
+              type="hidden"
+              name="_next"
+              value="https://127.0.0.1:5501/pages/thankyou.html"
+            />
           </form>
         </div>
+
+        <!-- info -->
+        <div class="contact-box__info contact"></div>
+        <!-- Map -->
+
+        <div class="contact-box__map contact"></div>
       </div>
     </main>
 

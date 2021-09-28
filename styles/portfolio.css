@@ -1,51 +1,142 @@
-.portfolio-row {
-  display: -ms-flexbox;
-  /* IE10 */
+.work_gallery {
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
-  /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
+      flex-wrap: wrap;
+  width: 1200px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
-/* Create four equal columns that sits next to each other */
-.portfolio-column {
-  -ms-flex: 25%;
-  /* IE10 */
-  -webkit-box-flex: 25%;
-          flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+.container__box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  background: rgba(254, 80, 87, 0.8);
+  border-radius: 5px;
+  box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
+  -webkit-box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
+  -moz-box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
 }
 
-.portfolio-column img {
-  margin-top: 8px;
-  vertical-align: middle;
+.container__box__name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
   width: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 75px);
+          transform: translate3d(0, 0, 75px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
 }
 
-.portfolio-column img:hover {
+.container__box__number {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   opacity: 0.5;
+  color: #fff;
+  font-size: 3rem;
+  background-color: transparent;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translate3d(5%, 10%, 3rem);
+          transform: translate3d(5%, 10%, 3rem);
+  z-index: 1;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .portfolio-column {
-    -ms-flex: 50%;
-    -webkit-box-flex: 50%;
-            flex: 50%;
-    max-width: 50%;
-  }
+.container__box:hover .container__box__name {
+  top: 40px;
+  opacity: 1;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .portfolio-column {
-    -ms-flex: 100%;
-    -webkit-box-flex: 100%;
-            flex: 100%;
-    max-width: 100%;
-  }
+.container__box:hover .container__box__btn {
+  bottom: 30px;
+  opacity: 0.9;
+}
+
+.container__box__btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translate3d(-50%, -80%, 75px);
+          transform: translate3d(-50%, -80%, 75px);
+  color: rgba(254, 80, 87, 0.5);
+  background-color: #f5dfbb;
+  height: 3rem;
+  padding: 15px 25px 25px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container__box::before {
+  content: 'PRO-';
+  position: absolute;
+  top: 1rem;
+  left: -1.5rem;
+  font-size: 6em;
+  font-weight: 900;
+  color: #0abfbc;
+  font-style: italic;
+  opacity: 0.8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container__box::after {
+  content: 'JECT';
+  position: absolute;
+  bottom: 1rem;
+  right: -1.3rem;
+  font-size: 5em;
+  font-weight: 900;
+  color: #0abfbc;
+  font-style: italic;
+  opacity: 0.8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container__box:hover::before, .container__box:hover::after {
+  opacity: 0.4;
 }
 /*# sourceMappingURL=portfolio.css.map */

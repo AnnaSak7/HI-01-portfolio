@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>Anna Sakurai portfolio</title>
   </head>
-  <body>
+  <body onload="addIcons()">
     <header id="header">
       <div class="header">
         <label class="logo">
@@ -67,23 +67,7 @@
           Hi,<br />I'm Anna<br />Web Developer <br />
           <p>Front end Developer</p>
 
-          <div class="social-media sm">
-            <div class="social-media__img">
-              <a class="icon" href="#"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="social-media__img">
-              <a class="icon" href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <div class="social-media__img">
-              <a class="icon" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="social-media__img">
-              <a class="icon" href="#"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <div class="social-media__img">
-              <a class="icon" href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
+          <div class="social-media sm" id="sm"></div>
         </div>
       </div>
     </section>
