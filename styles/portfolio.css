@@ -50,13 +50,13 @@
   top: 0;
   left: 0;
   text-align: center;
-  font-size: 3rem;
+  font-size: 1rem;
   color: #fff;
   width: 100%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translate3d(0, 0, 75px);
-          transform: translate3d(0, 0, 75px);
+  -webkit-transform: translate3d(0, 150%, 75px);
+          transform: translate3d(0, 150%, 75px);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
@@ -94,8 +94,8 @@
   left: 50%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translate3d(-50%, -80%, 75px);
-          transform: translate3d(-50%, -80%, 75px);
+  -webkit-transform: translate3d(-50%, -180%, 75px);
+          transform: translate3d(-50%, -180%, 75px);
   color: rgba(254, 80, 87, 0.5);
   background-color: #f5dfbb;
   height: 3rem;
@@ -109,11 +109,11 @@
 }
 
 .container__box::before {
-  content: 'PRO-';
+  content: 'PROJECT';
   position: absolute;
   top: 1rem;
   left: -1.5rem;
-  font-size: 6em;
+  font-size: 4rem;
   font-weight: 900;
   color: #0abfbc;
   font-style: italic;
@@ -123,11 +123,11 @@
 }
 
 .container__box::after {
-  content: 'JECT';
+  content: 'NAME';
   position: absolute;
   bottom: 1rem;
   right: -1.3rem;
-  font-size: 5em;
+  font-size: 4rem;
   font-weight: 900;
   color: #0abfbc;
   font-style: italic;
@@ -138,5 +138,55 @@
 
 .container__box:hover::before, .container__box:hover::after {
   opacity: 0.4;
+}
+
+@media screen and (max-width: 481px) and (hover: none) {
+  .container {
+    width: 100vw;
+  }
+  .container__box {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 30px;
+  }
+  .container:hover .container__box__name {
+    top: 40px;
+    opacity: 1;
+  }
+  .container:hover .container__box__btn {
+    bottom: 30px;
+    opacity: 0.9;
+  }
+  .container__btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: translate3d(-50%, -80%, 75px);
+            transform: translate3d(-50%, -80%, 75px);
+    color: rgba(254, 80, 87, 0.5);
+    background-color: #f5dfbb;
+    height: 3rem;
+    padding: 15px 25px 25px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    opacity: 0;
+    z-index: 10;
+  }
+  .container__box::before {
+    font-size: 4rem;
+    opacity: 0.3;
+  }
+  .container__box::after {
+    font-size: 4rem;
+    opacity: 0.3;
+  }
+  .container__box:hover::before, .container__box:hover::after {
+    opacity: 0.4;
+  }
 }
 /*# sourceMappingURL=portfolio.css.map */

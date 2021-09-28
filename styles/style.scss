@@ -106,8 +106,6 @@ h2 {
   }
 }
 
-/*Portfolio page ---------------------*/
-
 /* CV ---------------*/
 
 .profile-container {
@@ -138,56 +136,57 @@ h2 {
       font-family: 'Staatliches', cursive;
       overflow-wrap: break-word;
     }
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .profile-container {
-    display: grid;
-    grid-template-columns: 55% 45%;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    margin-top: 5rem;
-    gap: 20px;
-
-    &__img img {
-      align-content: center;
-      grid-column: 2/3;
-      grid-row: 1/2;
-      width: 15rem;
-      height: auto;
-    }
-
-    &__name {
-      grid-column: 1/2;
-      grid-row: 1/2;
-
-      h1 {
-        font-size: 10vw;
-        color: $tq;
-        font-family: 'Staatliches', cursive;
-        overflow-wrap: break-word;
-        text-align: right;
-      }
-      p {
-        text-align: right;
-      }
+    p {
+      width: 70vw;
+      padding: 20px;
+      border-radius: 7px;
+      margin: 20px 20px;
     }
   }
 }
 
-.contactme-p {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60vw;
-  text-align: center;
-  padding: 20px;
-  //border: 1px solid #fff;
-  border-radius: 10px;
-}
+// @media screen and (min-width: 600px) {
+//   .profile-container {
+//     display: grid;
+//     grid-template-columns: 55% 45%;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100vw;
+//     margin-top: 5rem;
+//     gap: 20px;
+
+//     &__img img {
+//       align-content: center;
+//       grid-column: 2/3;
+//       grid-row: 1/2;
+//       width: 15rem;
+//       height: auto;
+//     }
+
+//     &__name {
+//       grid-column: 1/2;
+//       grid-row: 1/2;
+
+//       h1 {
+//         font-size: 10vw;
+//         color: $tq;
+//         font-family: 'Staatliches', cursive;
+//         overflow-wrap: break-word;
+//         text-align: right;
+//       }
+//       p {
+//         text-align: right;
+//       }
+//     }
+//   }
+// .row {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   width: 100%;
+//   align-items: center;
+// }
+// }
 
 .cards-container {
   display: flex;
@@ -196,74 +195,86 @@ h2 {
   align-items: center;
   margin: 50px 20px;
 }
-
 .info-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 85vw;
-  padding: 20px;
+  padding: 3rem 2rem;
   border-radius: 7px;
-  margin: 20px 20px;
+  margin: 2rem;
   background-color: $bgblack;
+
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
 }
 
-.workexp-names,
-.education-names {
+.skills-container {
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.skills-container__items {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  justify-content: center;
   align-items: center;
+
+  .skills {
+    width: 80%;
+
+    .progress {
+      display: flex;
+      height: 1rem;
+      overflow: hidden;
+      font-size: 0.75rem;
+      background-color: #e9ecef;
+      border-radius: 0.25rem;
+      margin-bottom: 1.5rem;
+
+      .bgColor {
+        background-color: $redOrange;
+      }
+    }
+
+    span {
+      font-size: 1.5rem;
+    }
+  }
 }
 
-// .my-1 {
-//   margin-top: 0.5rem !important;
-//   margin-bottom: 0.5rem !important;
-// }
+.timeline {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
 
-// .progress {
-//   display: flex;
-//   height: 1rem;
-//   overflow: hidden;
-//   font-size: 0.75rem;
-//   background-color: #e9ecef;
-//   border-radius: 0.25rem;
-// }
+  &__card {
+    position: relative;
+    margin-bottom: 0.5rem;
 
-// .progress-bar {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   overflow: hidden;
-//   color: #fff;
-//   text-align: center;
-//   white-space: nowrap;
-// }
+    .timeline-head {
+      font-size: 2rem;
+      padding: 0.5rem 1.5rem 1rem 1.5rem;
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        background-color: #fff;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        top: 16px;
+        left: -12px;
+        border: 7px solid $redOrange;
+        z-index: 10;
+      }
+    }
 
-.bgColor {
-  background-color: $red;
+    .timeline-body {
+      border-left: 2px solid $redOrange;
+      padding-left: 1.5rem;
+    }
+  }
 }
-
-// *,
-// ::after,
-// ::before {
-//   box-sizing: border-box;
-// }
 
 /* Contact ---------------*/
 .contact-box {
@@ -305,6 +316,18 @@ h2 {
 
 .contact {
   padding: 40px;
+
+  .contactme-p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    text-align: center;
+    padding: 20px;
+    //border: 1px solid #fff;
+    border-radius: 10px;
+  }
 }
 
 .form {
@@ -356,7 +379,7 @@ h2 {
   right: 0;
   bottom: 0;
   height: 2px;
-  background-color: rgb(248, 11, 11);
+  background-color: $redOrange;
   transition: transform 600ms ease-in-out;
   transform-origin: 0;
   transform: scaleX(0);

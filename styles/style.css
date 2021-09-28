@@ -173,13 +173,13 @@
   top: 0;
   left: 0;
   text-align: center;
-  font-size: 3rem;
+  font-size: 1rem;
   color: #fff;
   width: 100%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translate3d(0, 0, 75px);
-          transform: translate3d(0, 0, 75px);
+  -webkit-transform: translate3d(0, 150%, 75px);
+          transform: translate3d(0, 150%, 75px);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
@@ -217,8 +217,8 @@
   left: 50%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translate3d(-50%, -80%, 75px);
-          transform: translate3d(-50%, -80%, 75px);
+  -webkit-transform: translate3d(-50%, -180%, 75px);
+          transform: translate3d(-50%, -180%, 75px);
   color: rgba(254, 80, 87, 0.5);
   background-color: #f5dfbb;
   height: 3rem;
@@ -232,11 +232,11 @@
 }
 
 .container__box::before {
-  content: 'PRO-';
+  content: 'PROJECT';
   position: absolute;
   top: 1rem;
   left: -1.5rem;
-  font-size: 6em;
+  font-size: 4rem;
   font-weight: 900;
   color: #0abfbc;
   font-style: italic;
@@ -246,11 +246,11 @@
 }
 
 .container__box::after {
-  content: 'JECT';
+  content: 'NAME';
   position: absolute;
   bottom: 1rem;
   right: -1.3rem;
-  font-size: 5em;
+  font-size: 4rem;
   font-weight: 900;
   color: #0abfbc;
   font-style: italic;
@@ -261,6 +261,56 @@
 
 .container__box:hover::before, .container__box:hover::after {
   opacity: 0.4;
+}
+
+@media screen and (max-width: 481px) and (hover: none) {
+  .container {
+    width: 100vw;
+  }
+  .container__box {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 30px;
+  }
+  .container:hover .container__box__name {
+    top: 40px;
+    opacity: 1;
+  }
+  .container:hover .container__box__btn {
+    bottom: 30px;
+    opacity: 0.9;
+  }
+  .container__btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: translate3d(-50%, -80%, 75px);
+            transform: translate3d(-50%, -80%, 75px);
+    color: rgba(254, 80, 87, 0.5);
+    background-color: #f5dfbb;
+    height: 3rem;
+    padding: 15px 25px 25px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    opacity: 0;
+    z-index: 10;
+  }
+  .container__box::before {
+    font-size: 4rem;
+    opacity: 0.3;
+  }
+  .container__box::after {
+    font-size: 4rem;
+    opacity: 0.3;
+  }
+  .container__box:hover::before, .container__box:hover::after {
+    opacity: 0.4;
+  }
 }
 
 * {
@@ -396,7 +446,6 @@ h2 {
   }
 }
 
-/*Portfolio page ---------------------*/
 /* CV ---------------*/
 .profile-container {
   display: -webkit-box;
@@ -448,72 +497,11 @@ h2 {
   overflow-wrap: break-word;
 }
 
-@media screen and (min-width: 600px) {
-  .profile-container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 55% 45%;
-        grid-template-columns: 55% 45%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100vw;
-    margin-top: 5rem;
-    gap: 20px;
-  }
-  .profile-container__img img {
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    width: 15rem;
-    height: auto;
-  }
-  .profile-container__name {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-  }
-  .profile-container__name h1 {
-    font-size: 10vw;
-    color: #0abfbc;
-    font-family: 'Staatliches', cursive;
-    overflow-wrap: break-word;
-    text-align: right;
-  }
-  .profile-container__name p {
-    text-align: right;
-  }
-}
-
-.contactme-p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 60vw;
-  text-align: center;
+.profile-container__name p {
+  width: 70vw;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 7px;
+  margin: 20px 20px;
 }
 
 .cards-container {
@@ -548,15 +536,60 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   width: 85vw;
-  padding: 20px;
+  padding: 3rem 2rem;
   border-radius: 7px;
-  margin: 20px 20px;
+  margin: 2rem;
   background-color: #1b1b1b;
 }
 
-.workexp-names,
-.education-names {
+.info-container__title {
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.skills-container {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.skills-container .skills {
+  width: 80%;
+}
+
+.skills-container .skills .progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-container .skills .progress .bgColor {
+  background-color: #fe5057;
+}
+
+.skills-container .skills span {
+  font-size: 1.5rem;
+}
+
+.timeline {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -566,38 +599,33 @@ h2 {
           flex-direction: column;
 }
 
-.skills-container__items {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.timeline__card {
+  position: relative;
+  margin-bottom: 0.5rem;
 }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.timeline__card .timeline-head {
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem 1rem 1.5rem;
 }
 
-.bgColor {
-  background-color: #b7094c;
+.timeline__card .timeline-head::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  top: 16px;
+  left: -12px;
+  border: 7px solid #fe5057;
+  z-index: 10;
+}
+
+.timeline__card .timeline-body {
+  border-left: 2px solid #fe5057;
+  padding-left: 1.5rem;
 }
 
 /* Contact ---------------*/
@@ -650,6 +678,26 @@ h2 {
 
 .contact {
   padding: 40px;
+}
+
+.contact .contactme-p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60vw;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .form {
@@ -734,7 +782,7 @@ h2 {
   right: 0;
   bottom: 0;
   height: 2px;
-  background-color: #f80b0b;
+  background-color: #fe5057;
   -webkit-transition: -webkit-transform 600ms ease-in-out;
   transition: -webkit-transform 600ms ease-in-out;
   transition: transform 600ms ease-in-out;
