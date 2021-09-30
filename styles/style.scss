@@ -1,6 +1,7 @@
 @import 'nav.scss';
 @import 'variables.scss';
 @import 'portfolio.scss';
+@import 'svg.scss';
 
 * {
   margin: 0;
@@ -8,7 +9,8 @@
   text-decoration: none;
   list-style-type: none;
   box-sizing: border-box;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Rye', cursive;
+  //font-family: 'Heebo', sans-serif;
 }
 body {
   background-color: #131313;
@@ -17,7 +19,7 @@ body {
   align-items: center;
 }
 
-img.logo-image {
+.logo-image {
   height: 85px;
   top: 30px;
   left: 30px;
@@ -26,7 +28,7 @@ img.logo-image {
 }
 
 h2 {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Rye', cursive;
   color: $gray;
 }
 
@@ -48,6 +50,7 @@ h2 {
 /* caption text */
 .text {
   color: $tq;
+  font-family: 'Rye', cursive;
   font-size: 6rem;
   font-weight: 900;
   padding: 8px 12px;
@@ -57,6 +60,7 @@ h2 {
   text-align: left;
 
   p {
+    font-family: 'Rye', cursive;
     font-size: 2rem;
     color: $orange;
   }
@@ -66,7 +70,7 @@ h2 {
   display: flex;
 
   &__img {
-    margin: 1.5rem 1.5rem;
+    margin: 1.5rem 1.5rem 0 1.5rem;
   }
 }
 
@@ -75,10 +79,9 @@ h2 {
   justify-content: flex-start;
 
   &--cv {
-    font-size: 2rem;
+    font-size: 3em;
     display: flex;
     justify-content: center;
-    margin: auto;
   }
 }
 
@@ -114,6 +117,7 @@ h2 {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  margin-top: 10rem;
 
   &__img img {
     width: 50vw;
@@ -130,10 +134,10 @@ h2 {
     h1 {
       width: 50vw;
       display: block;
-      font-size: 15vw;
+      font-family: 'Rye', cursive;
+      font-size: 10vw;
       color: $tq;
       margin-bottom: 20px;
-      font-family: 'Staatliches', cursive;
       overflow-wrap: break-word;
     }
     p {
@@ -210,6 +214,10 @@ h2 {
     font-size: 1.8rem;
     margin-bottom: 1.8rem;
   }
+
+  &--download {
+    background-color: transparent;
+  }
 }
 
 .skills-container {
@@ -273,6 +281,14 @@ h2 {
       border-left: 2px solid $redOrange;
       padding-left: 1.5rem;
     }
+  }
+}
+
+.email,
+.phone,
+.address {
+  p {
+    font-size: 2rem;
   }
 }
 
@@ -394,52 +410,55 @@ h2 {
   justify-content: flex-end;
   align-items: center;
   height: 100px;
+
+  .contact-btn {
+    height: auto;
+    padding: 10px;
+    background-color: $bgblack;
+    border: 1px solid $tq;
+    border-radius: 3px;
+    position: relative;
+    color: $tq;
+    font-size: 2rem;
+    padding: 30px;
+    margin-top: 50px;
+    margin-right: 20px;
+    outline: none;
+
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+
+    &--download {
+      margin-top: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: #0abfbc;
+      z-index: -1;
+
+      transition: transform 500ms ease-in-out;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      transition: transform 500ms ease-in-out;
+      transform: scaleX(1);
+    }
+
+    &:hover,
+    &:focus {
+      color: #1b1b1b;
+    }
+  }
 }
-
-.contact-btn {
-  height: auto;
-  padding: 10px;
-  background-color: $bgblack;
-  border: 1px solid $tq;
-  border-radius: 3px;
-  position: relative;
-  color: $tq;
-  font-size: 2rem;
-  padding: 30px;
-  margin-top: 50px;
-  margin-right: 20px;
-  outline: none;
-
-  transition: color 300ms ease-in-out;
-  z-index: 1;
-}
-
-.contact-btn::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #0abfbc;
-  z-index: -1;
-
-  transition: transform 500ms ease-in-out;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-.contact-btn:hover::before,
-.contact-btn:focus::before {
-  transition: transform 500ms ease-in-out;
-  transform: scaleX(1);
-}
-
-.contact-btn:hover,
-.contact-btn:focus {
-  color: #1b1b1b;
-}
-
 @media screen and (min-width: 600px) and (max-width: 1200) {
   .form {
     max-width: 500px;
