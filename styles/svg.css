@@ -1,6 +1,6 @@
-#logo {
-  -webkit-animation: fill 0.5s ease forwards 3.5s infinite;
-          animation: fill 0.5s ease forwards 3.5s infinite;
+#logo path {
+  -webkit-animation: fill 0.5s ease forwards 3.5s;
+          animation: fill 0.5s ease forwards 3.5s;
 }
 
 #logo path:nth-child(2) {
@@ -93,14 +93,20 @@
 }
 
 @-webkit-keyframes fill {
+  from {
+    fill: transparent;
+  }
   to {
-    fill: #fff;
+    fill: turquoise;
   }
 }
 
 @keyframes fill {
+  from {
+    fill: transparent;
+  }
   to {
-    fill: #fff;
+    fill: turquoise;
   }
 }
 /*# sourceMappingURL=svg.css.map */

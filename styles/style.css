@@ -313,7 +313,7 @@
   }
 }
 
-#logo {
+#logo path {
   -webkit-animation: fill 0.5s ease forwards 3.5s;
           animation: fill 0.5s ease forwards 3.5s;
 }
@@ -408,12 +408,18 @@
 }
 
 @-webkit-keyframes fill {
+  from {
+    fill: transparent;
+  }
   to {
     fill: #0abfbc;
   }
 }
 
 @keyframes fill {
+  from {
+    fill: transparent;
+  }
   to {
     fill: #0abfbc;
   }
@@ -454,10 +460,14 @@ h2 {
 }
 
 /*index page -----------------------*/
-.coverImg {
+.cover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -465,29 +475,33 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+  /* caption text */
 }
 
-.coverImg img {
-  width: 60vw;
-  height: auto;
+.cover .name-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 2rem;
 }
 
-/* caption text */
-.text {
+.cover .text {
   color: #0abfbc;
   font-family: 'Rye', cursive;
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 900;
   padding: 8px 12px;
-  position: absolute;
-  top: 50%;
-  left: 5%;
   text-align: left;
+  margin-top: 2rem;
 }
 
-.text p {
+.cover .text p {
   font-family: 'Rye', cursive;
   font-size: 2rem;
+  text-align: end;
   color: #f4a261;
 }
 
@@ -547,10 +561,6 @@ h2 {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .coverImg img {
-    width: auto;
-    height: 80vh;
-  }
 }
 
 /* CV ---------------*/
@@ -576,40 +586,6 @@ h2 {
   width: 50vw;
   height: auto;
   margin-top: 80px;
-}
-
-.profile-container__name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 2rem;
-}
-
-.profile-container__name h1 {
-  width: 50vw;
-  display: block;
-  font-family: 'Rye', cursive;
-  font-size: 10vw;
-  color: #0abfbc;
-  margin-bottom: 20px;
-  overflow-wrap: break-word;
-}
-
-.profile-container__name p {
-  width: 70vw;
-  padding: 20px;
-  border-radius: 7px;
-  margin: 20px 20px;
 }
 
 .cards-container {
@@ -748,15 +724,19 @@ h2 {
 
 /* Contact ---------------*/
 .contact-box {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
-  -ms-grid-rows: 5fr 4fr;
-      grid-template-rows: 5fr 4fr;
-      grid-template-areas: 'contact-box__form contact-box__info' 'contact-box__form contact-box__map';
-  grid-gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contact-box__form {
@@ -782,23 +762,7 @@ h2 {
   color: #0abfbc;
 }
 
-.contact-box__form {
-  grid-area: form;
-}
-
-.contact-box__info {
-  grid-area: info;
-}
-
-.contact-box__map {
-  grid-area: map;
-}
-
-.contact {
-  padding: 40px;
-}
-
-.contact .contactme-p {
+.contact-box__form .contactMe-p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -818,7 +782,7 @@ h2 {
   border-radius: 10px;
 }
 
-.form {
+.contact-box__form .form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -829,7 +793,7 @@ h2 {
   margin-right: right;
 }
 
-.form__containers {
+.contact-box__form .form__containers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -849,11 +813,11 @@ h2 {
   border-radius: 10px;
 }
 
-.contact-inputs {
+.contact-box__form .form__containers .contact-inputs {
   width: 80vw;
 }
 
-.contact-inputs__box {
+.contact-box__form .form__containers .contact-inputs__box {
   width: 100%;
   padding: 15px;
   border: none;
@@ -865,32 +829,52 @@ h2 {
   outline: none;
 }
 
-.contact-inputs__box::-webkit-input-placeholder {
+.contact-box__form .form__containers .contact-inputs__box::-webkit-input-placeholder {
   font-size: 2rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
 
-.contact-inputs__box:-ms-input-placeholder {
+.contact-box__form .form__containers .contact-inputs__box:-ms-input-placeholder {
   font-size: 2rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
 
-.contact-inputs__box::-ms-input-placeholder {
+.contact-box__form .form__containers .contact-inputs__box::-ms-input-placeholder {
   font-size: 2rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
 
-.contact-inputs__box::placeholder {
+.contact-box__form .form__containers .contact-inputs__box::placeholder {
   font-size: 2rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
 
-.underline {
+.contact-box__form .form__containers .underline {
   position: relative;
+}
+
+.contact-box__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80vw;
+  padding: 3rem 2rem;
+  margin: 2rem;
+  background-color: #1b1b1b;
 }
 
 .border-underline::before {
@@ -918,6 +902,9 @@ h2 {
 }
 
 .contact-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -928,7 +915,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100px;
+  padding-right: 10px;
 }
 
 .contact-btn-container .contact-btn {
