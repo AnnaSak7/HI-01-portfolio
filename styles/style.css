@@ -517,16 +517,13 @@ h2 {
 
 .sm {
   font-size: 3.7rem;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .sm--cv {
   font-size: 3em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -586,6 +583,25 @@ h2 {
   width: 50vw;
   height: auto;
   margin-top: 80px;
+}
+
+.profile-container__name {
+  width: 50vw;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-container__name p {
+  margin-top: 2rem;
 }
 
 .cards-container {
@@ -758,7 +774,7 @@ h2 {
 }
 
 .contact-box__form h1 {
-  font-size: 5rem;
+  font-size: 3rem;
   color: #0abfbc;
 }
 
@@ -779,7 +795,6 @@ h2 {
   width: 60vw;
   text-align: center;
   padding: 20px;
-  border-radius: 10px;
 }
 
 .contact-box__form .form {
@@ -790,7 +805,6 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-right: right;
 }
 
 .contact-box__form .form__containers {
@@ -823,32 +837,32 @@ h2 {
   border: none;
   border-radius: 3px;
   background-color: #1b1b1b;
-  font-size: 2rem;
+  font-size: 0.8rem;
   margin-top: 30px;
   color: #ccc5b9;
   outline: none;
 }
 
 .contact-box__form .form__containers .contact-inputs__box::-webkit-input-placeholder {
-  font-size: 2rem;
+  font-size: 0.8rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
 
 .contact-box__form .form__containers .contact-inputs__box:-ms-input-placeholder {
-  font-size: 2rem;
+  font-size: 0.8rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
 
 .contact-box__form .form__containers .contact-inputs__box::-ms-input-placeholder {
-  font-size: 2rem;
+  font-size: 0.8rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
 
 .contact-box__form .form__containers .contact-inputs__box::placeholder {
-  font-size: 2rem;
+  font-size: 0.8rem;
   color: #7a7a7a;
   opacity: 0.4;
 }
@@ -857,7 +871,7 @@ h2 {
   position: relative;
 }
 
-.contact-box__info {
+.contact-box__infoMap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -871,10 +885,31 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80vw;
+}
+
+.contact-box__infoMap .infoMap-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 600px;
   padding: 3rem 2rem;
   margin: 2rem;
   background-color: #1b1b1b;
+}
+
+.contact-box__infoMap .infoMap-map iframe {
+  width: 600px;
+  height: 600px;
 }
 
 .border-underline::before {
@@ -926,10 +961,10 @@ h2 {
   border-radius: 3px;
   position: relative;
   color: #0abfbc;
-  font-size: 2rem;
-  padding: 30px;
-  margin-top: 50px;
-  margin-right: 20px;
+  font-size: 1rem;
+  padding: 20px;
+  margin-bottom: 50px;
+  margin-right: 15px;
   outline: none;
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
@@ -972,9 +1007,186 @@ h2 {
   color: #1b1b1b;
 }
 
-@media screen and (min-width: 600px) and (max-width: 1200) {
-  .form {
-    max-width: 500px;
+@media screen and (min-width: 1000px) {
+  .contact-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-box__form {
+    margin-top: 6rem;
+    width: 50vw;
+  }
+  .contact-box__form h1 {
+    font-size: 3rem;
+    color: #0abfbc;
+  }
+  .contact-box__form .contactMe-p {
+    width: auto;
+    padding: 10px 20px 0 20px;
+    font-size: 0.7rem;
+  }
+  .contact-box__form .form__containers {
+    width: auto;
+    height: auto;
+    padding: 20px;
+  }
+  .contact-box__form .form__containers .contact-inputs {
+    width: 45vw;
+    height: auto;
+  }
+  .contact-box__form .form__containers .contact-inputs__box {
+    margin-top: 15px;
+  }
+  .contact-box__infoMap {
+    width: 40vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-box__infoMap .infoMap-info {
+    width: 35vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 3rem 2rem;
+    background-color: #1b1b1b;
+  }
+  .contact-box__infoMap .infoMap-map {
+    width: 35vw;
+  }
+  .contact-box__infoMap .infoMap-map iframe {
+    width: 35vw;
+    height: 20rem;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .contact-box {
+    margin-top: 5rem;
+  }
+  .contact-box__form .contactMe-p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 40vw;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 1435px) {
+  .contact-box__form h1 {
+    font-size: 5rem;
+    color: #0abfbc;
+  }
+  .contact-box__form .contactMe-p {
+    font-size: 0.9rem;
+  }
+  .contact-box__form .form__containers .contact-inputs__box {
+    font-size: 1.8rem;
+    margin-top: 15px;
+  }
+  .contact-box__form .form__containers .contact-inputs__box::-webkit-input-placeholder {
+    font-size: 1.8rem;
+  }
+  .contact-box__form .form__containers .contact-inputs__box:-ms-input-placeholder {
+    font-size: 1.8rem;
+  }
+  .contact-box__form .form__containers .contact-inputs__box::-ms-input-placeholder {
+    font-size: 1.8rem;
+  }
+  .contact-box__form .form__containers .contact-inputs__box::placeholder {
+    font-size: 1.8rem;
+  }
+  .contact-box__infoMap {
+    width: 40vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-box__infoMap .infoMap-info {
+    width: 35vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 3rem 2rem;
+    background-color: #1b1b1b;
+  }
+  .contact-box__infoMap .infoMap-map {
+    width: 35vw;
+  }
+  .contact-box__infoMap .infoMap-map iframe {
+    width: 35vw;
+    height: 40rem;
+  }
+  .contact-btn-container .contact-btn {
+    font-size: 1.8rem;
+    padding: 30px;
+    margin-right: 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */
