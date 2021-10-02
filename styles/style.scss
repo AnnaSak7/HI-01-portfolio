@@ -21,8 +21,8 @@ body {
 
 .logo-image {
   height: 85px;
-  top: 30px;
-  left: 30px;
+  top: 40px;
+  left: 50px;
   position: fixed;
   z-index: 11;
 }
@@ -111,7 +111,7 @@ h2 {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  margin-top: 10rem;
+  margin-top: 5rem;
 
   &__img img {
     width: 50vw;
@@ -231,6 +231,24 @@ h2 {
   }
 }
 
+@media screen and (min-width: 600px) {
+  .profile-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    &__img img {
+      width: 30vw;
+    }
+
+    &__name {
+      width: 40vw;
+
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
 /* Contact ---------------*/
 .contact-box {
   display: flex;
@@ -246,7 +264,7 @@ h2 {
     width: 100vw;
 
     h1 {
-      font-size: 3rem;
+      font-size: 5rem;
       color: $tq;
     }
     .contactMe-p {
@@ -257,6 +275,7 @@ h2 {
       width: 60vw;
       text-align: center;
       padding: 20px;
+      font-size: 2rem;
     }
     .form {
       display: flex;
@@ -282,7 +301,7 @@ h2 {
             border: none;
             border-radius: 3px;
             background-color: $bgblack;
-            font-size: 0.8rem;
+            font-size: 2rem;
             margin-top: 30px;
             color: $ow;
             outline: none;
@@ -357,7 +376,7 @@ h2 {
     border-radius: 3px;
     position: relative;
     color: $tq;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 20px;
     margin-bottom: 50px;
     margin-right: 15px;
@@ -411,7 +430,7 @@ h2 {
       margin-top: 6rem;
       width: 50vw;
       h1 {
-        font-size: 3rem;
+        font-size: 4rem;
         color: $tq;
       }
 
@@ -478,6 +497,16 @@ h2 {
         width: 40vw;
         text-align: center;
         padding: 20px;
+      }
+    }
+
+    &__infoMap {
+      .infoMap-map {
+        width: 35vw;
+        iframe {
+          width: 35vw;
+          height: 40rem;
+        }
       }
     }
   }

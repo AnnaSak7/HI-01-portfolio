@@ -41,7 +41,7 @@
       transform: translate3d(0, 150%, 75px);
       transition: 0.5s;
       opacity: 0;
-      z-index: 10;
+      z-index: 5;
     }
 
     &__number {
@@ -96,7 +96,7 @@
       text-decoration: none;
       transition: 0.7s;
       opacity: 0;
-      z-index: 10;
+      z-index: 9;
     }
   }
 

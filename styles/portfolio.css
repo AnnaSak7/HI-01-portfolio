@@ -60,7 +60,7 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
-  z-index: 10;
+  z-index: 5;
 }
 
 .container__box__number {
@@ -105,7 +105,7 @@
   -webkit-transition: 0.7s;
   transition: 0.7s;
   opacity: 0;
-  z-index: 10;
+  z-index: 9;
 }
 
 .container__box::before {
