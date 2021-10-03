@@ -27,6 +27,23 @@ body {
   z-index: 11;
 }
 
+@media screen and (min-width: 700px) {
+  .logo-image {
+    height: 70px;
+  }
+  .hamburger-menu {
+    width: 55px;
+    height: 55px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-13px, 11px);
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-13px, -11px);
+  }
+}
+
 h2 {
   font-family: 'Rye', cursive;
   color: $gray;
@@ -102,31 +119,6 @@ h2 {
   color: $red;
   transform: scale(1.5);
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@media screen and (min-device-width: 600px) {
-  .coverImg {
-    display: flex;
-    justify-content: center;
-  }
-
-  .profile-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-    &__img img {
-      width: 30vw;
-    }
-
-    &__name {
-      width: 40vw;
-
-      p {
-        margin-top: 1rem;
-      }
-    }
-  }
 }
 
 /* CV ---------------*/
@@ -261,8 +253,42 @@ h2 {
   }
 }
 
+@media screen and (min-width: 700px) {
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    &__img img {
+      width: 28vw;
+    }
+
+    &__name {
+      width: 40vw;
+
+      svg {
+        margin-top: 50px;
+        width: 40vw;
+      }
+
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .skills-container {
+    flex-direction: row;
+    .mb-2 {
+      padding: 0 1rem;
+    }
+  }
+}
+
 /* Contact ---------------*/
-.contact-box {
+.contact-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -284,7 +310,7 @@ h2 {
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       font-size: 1rem;
     }
     .form {
@@ -292,7 +318,7 @@ h2 {
       flex-direction: column;
       // margin-right: right;
 
-      &__containers {
+      &__container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -431,154 +457,70 @@ h2 {
 //   height: 60vh;
 // }
 @media screen and (min-width: 1000px) {
-  .contact-box {
+  .contact-container {
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
 
-    &__form {
-      margin-top: 6rem;
-      width: 50vw;
-      h1 {
-        font-size: 4rem;
-        color: $tq;
-      }
-
-      .contactMe-p {
-        width: auto;
-        padding: 10px 20px 0 20px;
-        font-size: 0.7rem;
-      }
-      .form {
-        &__containers {
-          width: auto;
-          height: auto;
-          padding: 20px;
-
-          .contact-inputs {
-            width: 45vw;
-            height: auto;
-            &__box {
-              margin-top: 15px;
-            }
-          }
-        }
-      }
-    }
-
-    &__infoMap {
-      width: 40vw;
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: center;
-      align-items: center;
-
-      .infoMap-info {
-        width: 35vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: fit-content;
-        padding: 3rem 2rem;
-        background-color: $bgblack;
-      }
-      .infoMap-map {
-        width: 35vw;
-
-        iframe {
-          width: 35vw;
-          height: 20rem;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1110px) {
-  .contact-box {
-    margin-top: 5rem;
-    &__form {
-      .contactMe-p {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 40vw;
-        text-align: center;
-        padding: 20px;
-      }
-    }
-
-    &__infoMap {
-      .infoMap-map {
-        width: 35vw;
-        iframe {
-          width: 35vw;
-          height: 40rem;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1435px) {
-  .contact-box {
     &__form {
       h1 {
-        font-size: 5rem;
+        font-size: 2rem;
         color: $tq;
       }
       .contactMe-p {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        width: 80%;
       }
       .form {
-        &__containers {
+        &__container {
           .contact-inputs {
             &__box {
-              font-size: 1.8rem;
-              margin-top: 15px;
+              width: 50vw;
+              padding: 15px;
+              border: none;
+              border-radius: 3px;
+              background-color: $bgblack;
+              font-size: 1rem;
+              margin-top: 20px;
+              color: $ow;
+              outline: none;
             }
             &__box::placeholder {
-              font-size: 1.8rem;
+              font-size: 1rem;
+              color: $gray;
+              opacity: 0.4;
             }
+          }
+          .underline {
+            position: relative;
           }
         }
       }
     }
 
     &__infoMap {
-      width: 40vw;
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
 
       .infoMap-info {
-        width: 35vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: fit-content;
-        padding: 3rem 2rem;
-        background-color: $bgblack;
-      }
-      .infoMap-map {
-        width: 35vw;
-        iframe {
-          width: 35vw;
-          height: 40rem;
+        &__box {
+          margin: 1rem 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 2rem;
+          border-radius: 10px;
+          background-color: $bgblack;
+          font-size: 0.8rem;
         }
       }
-    }
-  }
-
-  .contact-btn-container {
-    .contact-btn {
-      font-size: 1.8rem;
-      padding: 30px;
-      margin-right: 15px;
+      .infoMap-map {
+        iframe {
+          width: 90vw;
+          height: 90vw;
+        }
+      }
     }
   }
 }

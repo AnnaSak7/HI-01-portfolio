@@ -40,7 +40,7 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: rgba(6, 6, 16, 0.9);
+  background-color: transparent;
   border-radius: 5px;
 }
 
