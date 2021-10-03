@@ -6,10 +6,35 @@ menuIcon.addEventListener('click', () => {
   navbar.classList.toggle('change');
 });
 
-function getTag(id) {
-  return document.getElementById(id);
-}
+///////////////Intersection Observer /////////////////////////
+const card = document.querySelector('.education');
+const cards = document.querySelectorAll('.info-container');
 
+const option = {
+  root: null, // it is the viewport
+  threshold: 0.25,
+  rootMargin: '-150px',
+};
+
+const observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return; //'return' ends the function immediately
+    }
+
+    console.log(entry.target);
+    entry.target.classList.toggle('visible');
+    observer.unobserve(entry.target);
+  });
+}, option);
+
+cards.forEach((card) => {
+  observer.observe(card);
+});
+
+//observer.observe(card);
+
+///////////// adding social media icons //////////////////////
 function createIcons(icons) {
   let div = getTag('sm');
   div.innerHTML += `<div class="social-media__img">
@@ -28,6 +53,11 @@ function addIcons() {
       }
     });
 }
+//////////////////////////////////////////////////////////////
+
+function getTag(id) {
+  return document.getElementById(id);
+}
 
 function createTag(tag, name) {
   const elem = document.createElement(tag);
@@ -35,6 +65,7 @@ function createTag(tag, name) {
   return elem;
 }
 
+////////////////////////////////////////////////////////////
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: -34.397, lng: 150.644 },
