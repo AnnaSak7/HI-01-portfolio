@@ -731,6 +731,15 @@ h2 {
   padding-left: 1.5rem;
 }
 
+.timeline__card .timeline-body span {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.timeline__card .timeline-body p {
+  font-size: 1.1rem;
+}
+
 .email p,
 .phone p,
 .address p {
@@ -763,9 +772,29 @@ h2 {
   .profile-container__name p {
     margin-top: 1rem;
   }
+  .timeline__card .timeline-head {
+    font-size: 2.2rem;
+  }
+  .timeline__card .timeline-body span {
+    font-size: 1rem;
+  }
+  .timeline__card .timeline-body p {
+    font-size: 1.3rem;
+  }
+  .email p,
+  .phone p,
+  .address p {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 1000px) {
+  .info-bg {
+    padding: 30px;
+  }
+  .profile-container p {
+    font-size: 1.2rem;
+  }
   .skills-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -775,11 +804,71 @@ h2 {
   .skills-container .mb-2 {
     padding: 0 1rem;
   }
+  .timeline__card .timeline-head {
+    font-size: 2.5rem;
+  }
+  .timeline__card .timeline-body span {
+    font-size: 1.2rem;
+  }
+  .timeline__card .timeline-body p {
+    font-size: 1.5rem;
+  }
+  .email p,
+  .phone p,
+  .address p {
+    font-size: 1.5rem;
+  }
 }
 
-@media screen and (min-width: 1439px) {
-  .contact-btn--download {
+@media screen and (min-width: 1440px) {
+  .info-bg {
+    padding: 50px;
+  }
+  .email p,
+  .phone p,
+  .address p {
+    font-size: 1.8rem;
+  }
+  .profile-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 120px;
+  }
+  .profile-container__img img {
+    max-width: 405px;
+    height: auto;
+  }
+  .profile-container__name svg {
+    margin-top: 50px;
+    max-width: 576px;
+  }
+  .profile-container__name p {
+    margin-top: 1rem;
+    max-width: 576px;
     font-size: 1.5rem;
+  }
+  .info-container {
+    max-width: 1280px;
+  }
+  .info-container__title {
+    font-size: 1rem;
+  }
+  .skills-container .skills {
+    width: 80%;
+  }
+  .skills-container .skills span {
+    font-size: 1.8rem;
+  }
+  .timeline {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -1027,6 +1116,7 @@ h2 {
 
 .contact-btn-container .contact-btn--download {
   margin: 0;
+  font-size: 1rem;
 }
 
 .contact-btn-container .contact-btn::before {
@@ -1153,6 +1243,12 @@ h2 {
   .contact-container__infoMap .infoMap-info__box {
     padding: 3rem;
     font-size: 0.8rem;
+  }
+  .contact-btn-container .contact-btn {
+    font-size: 1.5rem;
+  }
+  .contact-btn-container .contact-btn--download {
+    font-size: 1.5rem;
   }
 }
 
