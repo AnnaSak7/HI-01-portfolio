@@ -10,3 +10,9 @@ $gray: #7a7a7a;
 $gradient: linear-gradient(to bottom, #303846, #5f6673);
 //fonts
 //$font: freight-sans-pro, sans-serif;;
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+// browser default context = 16px
+// @function rem($pixels, $context: 16) {
+//   @return (math.div($pixels, $context)) * 1rem;
+// }
