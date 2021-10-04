@@ -1,7 +1,4 @@
-@use 'nav.scss';
-@use 'variables.scss';
-@use 'portfolio.scss';
-@use 'svg.scss';
+@import 'variables.scss';
 
 @mixin flexCenter {
   display: flex;
@@ -23,6 +20,9 @@ body {
   color: #ccc5b9;
   justify-content: center;
   align-items: center;
+}
+h2 {
+  color: $gray;
 }
 
 .logo-image {
@@ -49,13 +49,109 @@ body {
     transform: rotateZ(405deg) translate(-13px, -11px);
   }
 }
-
-h2 {
-  font-family: 'Rye', cursive;
-  color: $gray;
+////// Navbar ///////////////////////////////////////
+.navbar {
+  width: 45vw;
+  height: 100vh;
+  background-color: $ow;
+  position: fixed;
+  top: 0;
+  right: -70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70% 0 0 70%;
+  transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+  z-index: 20;
 }
 
-/*index page -----------------------*/
+.change {
+  right: 0;
+}
+
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: $tq;
+  border-radius: 50px;
+  transition: all 0.8s;
+}
+
+.change .line-1 {
+  transform: rotateZ(-405deg) translate(-10px, 9px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(405deg) translate(-10px, -9px);
+}
+
+.nav-list {
+  text-align: right;
+  list-style-type: none;
+}
+
+.nav-item {
+  list-style: none;
+  margin: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: $tq;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: $orange;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav-link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.nav-link::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+///*index page -----------------------*////////////////////////////////
 
 .cover {
   @include flexCenter();
@@ -89,6 +185,78 @@ h2 {
     }
   }
 }
+
+/// SVG animation ///////////////////////////////
+
+#logo {
+  path {
+    animation: fill 0.5s ease forwards 3.5s;
+  }
+}
+
+#logo path:nth-child(2) {
+  stroke-dasharray: 835px;
+  stroke-dashoffset: 835px;
+  animation: line-anim 2s ease forwards;
+}
+#logo path:nth-child(3) {
+  stroke-dasharray: 967px;
+  stroke-dashoffset: 967px;
+  animation: line-anim 2s ease forwards 0.3s;
+}
+#logo path:nth-child(4) {
+  stroke-dasharray: 967px;
+  stroke-dashoffset: 967px;
+  animation: line-anim 2s ease forwards 0.6s;
+}
+#logo path:nth-child(5) {
+  stroke-dasharray: 835px;
+  stroke-dashoffset: 835px;
+  animation: line-anim 2s ease forwards 0.9s;
+}
+
+#logo path:nth-child(6) {
+  stroke-dasharray: 774px;
+  stroke-dashoffset: 774px;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+#logo path:nth-child(7) {
+  stroke-dasharray: 835px;
+  stroke-dashoffset: 835px;
+  animation: line-anim 2s ease forwards 1.5s;
+}
+#logo path:nth-child(8) {
+  stroke-dasharray: 970px;
+  stroke-dashoffset: 970px;
+  animation: line-anim 2s ease forwards 1.8s;
+}
+#logo path:nth-child(9) {
+  stroke-dasharray: 814px;
+  stroke-dashoffset: 814px;
+  animation: line-anim 2s ease forwards 2.1s;
+}
+#logo path:nth-child(10) {
+  stroke-dasharray: 987px;
+  stroke-dashoffset: 987px;
+  animation: line-anim 2s ease forwards 2.4s;
+}
+#logo path:nth-child(11) {
+  stroke-dasharray: 835px;
+  stroke-dashoffset: 835px;
+  animation: line-anim 2s ease forwards 2.7s;
+}
+#logo path:nth-child(12) {
+  stroke-dasharray: 522px;
+  stroke-dashoffset: 522px;
+  animation: line-anim 2s ease forwards 3s;
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/////////////////////////////////////////////////////
 
 .social-media {
   display: flex;
@@ -125,7 +293,188 @@ h2 {
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* CV ---------------*/
+///* Portfolio page --------------------*/////////////////////////
+
+.work_gallery {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1200px;
+  transform-style: preserve-3d;
+
+  &__box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    background: rgba(254, 80, 87, 0.8);
+    border-radius: 5px;
+    box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
+    -webkit-box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
+    -moz-box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
+    transform-style: preserve-3d;
+    transform: scale3d(1, 1, 1);
+
+    &__name {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      font-size: 1rem;
+      color: $ow;
+      width: 100%;
+      transform-style: preserve-3d;
+      transform: translate3d(0, 150%, 75px);
+      transition: 0.5s;
+      opacity: 0;
+      z-index: 5;
+    }
+
+    &__number {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0.5;
+      color: #fff;
+      font-size: 3rem;
+      background-color: transparent;
+      transform-style: preserve-3d;
+      transform: translate3d(5%, 10%, 3rem);
+      z-index: 1;
+    }
+
+    &:hover {
+      .container__box__name {
+        top: 40px;
+        opacity: 1;
+      }
+      .container__box__btn {
+        bottom: 30px;
+        opacity: 0.9;
+      }
+    }
+
+    &__btn {
+      font-size: 0.8rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -180%, 75px);
+      color: rgba(254, 80, 87, 0.5);
+
+      background-color: $orange;
+
+      height: 3rem;
+      padding: 15px 25px 25px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.7s;
+      opacity: 0;
+      z-index: 9;
+    }
+  }
+
+  &__box::before {
+    content: 'PROJECT';
+    position: absolute;
+    top: 1rem;
+    left: -1.5rem;
+    font-size: 4rem;
+    font-weight: 900;
+    color: $tq;
+    font-style: italic;
+    opacity: 0.8;
+    transition: 0.5s;
+  }
+
+  &__box::after {
+    content: 'NAME';
+    position: absolute;
+    bottom: 1rem;
+    right: -1.3rem;
+    font-size: 4rem;
+    font-weight: 900;
+    color: $tq;
+    font-style: italic;
+    opacity: 0.8;
+    transition: 0.5s;
+  }
+
+  &__box:hover::before,
+  &__box:hover::after {
+    opacity: 0.4;
+  }
+}
+
+@media screen and (max-width: 481px) and (hover: none) {
+  .container {
+    width: 100vw;
+
+    &__box {
+      position: relative;
+      width: 250px;
+      height: 300px;
+      margin: 30px;
+    }
+
+    &:hover {
+      .container__box__name {
+        top: 40px;
+        opacity: 1;
+      }
+      .container__box__btn {
+        bottom: 30px;
+        opacity: 0.9;
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -80%, 75px);
+      color: rgba(254, 80, 87, 0.5);
+
+      background-color: #f5dfbb;
+
+      height: 3rem;
+      padding: 15px 25px 25px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.7s;
+      opacity: 0;
+      z-index: 10;
+    }
+
+    &__box::before {
+      font-size: 4rem;
+      opacity: 0.3;
+    }
+
+    &__box::after {
+      font-size: 4rem;
+      opacity: 0.3;
+    }
+
+    &__box:hover::before,
+    &__box:hover::after {
+      opacity: 0.4;
+    }
+  }
+}
+
+///* CV ---------------*/////////////////////////////////////
 
 .profile-container {
   @include flexCenter();
@@ -278,6 +627,14 @@ h2 {
     flex-direction: row;
     .mb-2 {
       padding: 0 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .contact-btn {
+    &--download {
+      font-size: 1.5rem;
     }
   }
 }
