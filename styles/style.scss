@@ -33,22 +33,6 @@ h2 {
   z-index: 11;
 }
 
-@media screen and (min-width: 700px) {
-  .logo-image {
-    height: 70px;
-  }
-  .hamburger-menu {
-    width: 55px;
-    height: 55px;
-  }
-  .change .line-1 {
-    transform: rotateZ(-405deg) translate(-13px, 11px);
-  }
-
-  .change .line-3 {
-    transform: rotateZ(405deg) translate(-13px, -11px);
-  }
-}
 ////// Navbar ///////////////////////////////////////
 .navbar {
   width: 45vw;
@@ -149,6 +133,81 @@ h2 {
 .nav-link:hover::before,
 .nav-link:hover::after {
   transform: scaleX(1);
+}
+
+@media screen and (min-width: 700px) {
+  .logo-image {
+    height: 70px;
+    top: 30px;
+    left: 40px;
+  }
+  .hamburger-menu {
+    width: 55px;
+    height: 55px;
+    top: 30px;
+    right: 40px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-13px, 11px);
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-13px, -11px);
+  }
+
+  .nav-link {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .logo-image {
+    height: 90px;
+    top: 40px;
+    right: 50px;
+  }
+  .hamburger-menu {
+    width: 75px;
+    height: 75px;
+    top: 40px;
+    right: 50px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-18px, 16px);
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-18px, -16px);
+  }
+
+  .nav-link {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo-image {
+    height: 110px;
+    top: 60px;
+    right: 90px;
+  }
+  .hamburger-menu {
+    width: 100px;
+    height: 100px;
+    top: 60px;
+    right: 90px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-24px, 21px);
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-24px, -21px);
+  }
+
+  .nav-link {
+    font-size: 3rem;
+  }
 }
 
 ///*index page -----------------------*////////////////////////////////
@@ -526,6 +585,10 @@ h2 {
   &--download {
     background-color: transparent;
   }
+
+  h2 {
+    font-size: 1.5rem;
+  }
 }
 
 .skills-container {
@@ -600,6 +663,9 @@ h2 {
 .email,
 .phone,
 .address {
+  a {
+    color: $red;
+  }
   p {
     font-size: 1rem;
   }
@@ -652,6 +718,12 @@ h2 {
 }
 
 @media screen and (min-width: 1000px) {
+  .info-container {
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
   .info-bg {
     padding: 30px;
   }
@@ -729,6 +801,9 @@ h2 {
     &__title {
       font-size: 1rem;
     }
+    h2 {
+      font-size: 2.3rem;
+    }
   }
 
   .skills-container {
@@ -748,7 +823,7 @@ h2 {
   }
 }
 
-/* Contact ---------------*/
+///* Contact ---------------*////////////////////////////
 .contact-container {
   @include flexCenter();
   flex-direction: column;
@@ -816,18 +891,27 @@ h2 {
     .infoMap-map {
       iframe {
         width: 90vw;
+        height: 25rem;
       }
     }
 
     .infoMap-info {
       &__box {
-        margin: 1rem 1rem;
-        @include flexCenter();
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin: 1rem 1rem;
         padding: 2rem;
         border-radius: 10px;
         background-color: $bgblack;
         font-size: 0.8rem;
+        width: 90vw;
+
+        a {
+          color: $red;
+        }
       }
     }
   }
@@ -906,9 +990,6 @@ h2 {
   }
 }
 
-// #map {
-//   height: 60vh;
-// }
 @media screen and (min-width: 1000px) {
   .contact-container {
     flex-direction: row;
@@ -964,14 +1045,15 @@ h2 {
         margin: 2rem;
         iframe {
           width: 40vw;
-          height: 300px;
+          height: 27rem;
         }
       }
 
       .infoMap-info {
         &__box {
+          width: 40vw;
           padding: 3rem;
-          font-size: 0.8rem;
+          font-size: 1.1rem;
         }
       }
     }
@@ -979,8 +1061,10 @@ h2 {
 
   .contact-btn-container {
     .contact-btn {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+
       &--download {
+        /////////// download button in CV page //////////////
         font-size: 1.5rem;
       }
     }
@@ -989,8 +1073,10 @@ h2 {
 
 @media screen and (min-width: 1439px) {
   .contact-container {
+    gap: 35px;
     &__form {
       height: 100vh;
+      max-width: 1210px;
       &__header {
         h1 {
           font-size: 4rem;
@@ -1002,7 +1088,6 @@ h2 {
       .form {
         display: flex;
         flex-direction: column;
-        // margin-right: right;
 
         &__container {
           display: flex;
@@ -1015,8 +1100,8 @@ h2 {
 
           .contact-inputs {
             &__box {
-              width: 50vw;
-              font-size: 0.9rem;
+              max-width: 1200px;
+              font-size: 2rem;
             }
             &__box::placeholder {
               font-size: 2rem;
@@ -1033,17 +1118,24 @@ h2 {
       .infoMap-map {
         margin: 2rem;
         iframe {
-          width: 40vw;
-          height: 300px;
+          max-width: 1200px;
+          height: 30rem;
         }
       }
 
       .infoMap-info {
         &__box {
           padding: 3rem;
-          font-size: 0.8rem;
+          font-size: 1.5rem;
+          max-width: 1200px;
         }
       }
+    }
+  }
+
+  .contact-btn-container {
+    .contact-btn {
+      font-size: 1.5rem;
     }
   }
 }

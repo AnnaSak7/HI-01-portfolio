@@ -34,25 +34,25 @@ menuIcon.addEventListener('click', () => {
 
 // //observer.observe(card);
 
-// ///////////// adding social media icons //////////////////////
-// function createIcons(icons) {
-//   let div = getTag('sm');
-//   div.innerHTML += `<div class="social-media__img">
-//       <a class="icon" href="${icons.url}""
-//         ><i class="${icons.class}""></i
-//       ></a>
-//     </div>`;
-// }
-// function addIcons() {
-//   fetch('../data/data.json')
-//     .then((res) => res.json())
-//     .then((data) => {
-//       console.log('data : ', data);
-//       for (let i = 0; i < data.length; i++) {
-//         createIcons(data[i]);
-//       }
-//     });
-// }
+///////////// adding social media icons //////////////////////
+function createIcons(icons) {
+  let div = getTag('sm');
+  div.innerHTML += `<div class="social-media__img">
+      <a class="icon" href="${icons.url}""
+        ><i class="${icons.class}""></i
+      ></a>
+    </div>`;
+}
+function addIcons() {
+  fetch('../data/data.json')
+    .then((res) => res.json())
+    .then((data) => {
+      console.log('data : ', data);
+      for (let i = 0; i < data.length; i++) {
+        createIcons(data[i]);
+      }
+    });
+}
 //////////////////////////////////////////////////////////////
 
 function getTag(id) {
