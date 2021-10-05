@@ -103,3 +103,27 @@ function watchForHover() {
 }
 
 watchForHover();
+
+/// turning off the tilting effect when width is less than 1000px////////////////////////////////////////////////////////////////////
+function destroyTilt() {
+  let tiltElements = document.querySelectorAll(`[data-tilt]`);
+  // look for [data-tilt] attributes
+  let mq = window.matchMedia('(max-width: 1000px)');
+  // .matchMedia() method returns a new MediaQueryList object that can be used to determine if the document matches the media query string, as well as to monitor the document to detect when it matches (or stops matching) that media query
+  if (mq.matches) {
+    for (let i = 0, len = tiltElements.length; i < len; i++) {
+      tiltElements[i].vanillaTilt.destroy();
+      // Destroy instance ---> tilt.tilt.destroy.call(tilt);
+    }
+  } else {
+    console.log('pedal');
+  }
+}
+
+/// rotate logo on scroll ///////////////////////////////////////////////////////////////////////
+
+const logo = document.querySelector('.logo-image');
+
+window.addEventListener('scroll', () => {
+  logo.style.transform = 'rotate(' + window.pageYOffset + 'deg)';
+});

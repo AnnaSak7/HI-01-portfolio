@@ -133,9 +133,9 @@ h2 {
   transform-origin: left;
 }
 
-body.hasHover .nav-link:hover::before,
+.nav-link:hover::before,
 .nav-link:focus::before,
-body.hasHover .nav-link:hover::after,
+.nav-link:hover::after,
 .nav-link:hover::after {
   transform: scaleX(1);
 }
@@ -479,7 +479,7 @@ body.hasHover .nav-link:hover::after,
   transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-body.hasHover .icon:hover i {
+.icon:hover i {
   color: $red;
   transform: scale(1.5);
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -617,7 +617,7 @@ body.hasHover .icon:hover i {
       transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
     }
 
-    body.hasHover &:hover {
+    &:hover {
       .container__box__name {
         top: 40px;
         opacity: 1;
@@ -711,9 +711,49 @@ body.hasHover .icon:hover i {
     flex-direction: column;
     width: 70vw;
 
-    width: 200px;
-    height: 300px;
-    margin: 4rem;
+    &__box {
+      width: 200px;
+      height: 300px;
+      margin: 4rem;
+
+      &__number {
+        font-size: 1.5rem;
+      }
+
+      img {
+        width: 200px;
+        height: 300px;
+      }
+      &__product {
+        position: absolute;
+        max-width: 200px;
+      }
+
+      &__btn {
+        font-size: 1rem;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform-style: preserve-3d;
+        transform: translate3d(-50%, -100%, 75px);
+        color: rgba(104, 7, 123, 0.5);
+        height: 2rem;
+        padding: 15px 25px 25px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.7s;
+        opacity: 0;
+        z-index: 9;
+      }
+    }
+
+    &__box::before {
+      font-size: 2rem;
+    }
+
+    &__box::after {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -1102,7 +1142,7 @@ body.hasHover .icon:hover i {
 }
 
 .border-underline:focus::before,
-body.hasHover .border-underline:hover::before {
+.border-underline:hover::before {
   transform: scale(1);
 }
 
@@ -1150,13 +1190,13 @@ body.hasHover .border-underline:hover::before {
     }
 
     &:focus::before,
-    body.hasHover &:hover::before {
+    &:hover::before {
       transition: transform 500ms ease-in-out;
       transform: scaleX(1);
     }
 
     &:focus,
-    body.hasHover &:hover {
+    &:hover {
       color: #1b1b1b;
     }
   }
