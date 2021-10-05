@@ -151,8 +151,8 @@ h2 {
           transform-origin: left;
 }
 
-.nav-link:hover::before,
-.nav-link:hover::after {
+body.hasHover .nav-link:hover::before,
+body.hasHover .nav-link:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
@@ -290,7 +290,7 @@ h2 {
   top: 0;
   right: 0;
   margin: 0;
-  color: #0abfbc;
+  color: #c5f1f5;
   text-shadow: 0 0 20px #039bad;
 }
 
@@ -333,7 +333,7 @@ h2 {
   top: 0;
   right: 0;
   margin: 0;
-  color: #f4a261;
+  color: #f9dcb9;
   text-shadow: 0 0 20px #f78800;
 }
 
@@ -559,7 +559,7 @@ h2 {
   transition: transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045), -webkit-transform 300ms 0ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.icon:hover i {
+body.hasHover .icon:hover i {
   color: #b7094c;
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
@@ -573,8 +573,14 @@ h2 {
   .social-media__img {
     margin: 1.1rem 0 0 2rem;
   }
+  .social-media--cv .social-media__img {
+    margin: 1.1rem 1.1rem 0 1.1rem;
+  }
   .sm {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+  }
+  .sm--cv {
+    font-size: 2rem;
   }
 }
 
@@ -582,8 +588,14 @@ h2 {
   .social-media__img {
     margin: 1.5rem 0 0 1.5rem;
   }
+  .social-media--cv .social-media__img {
+    margin: 1.5rem 1.5rem 0 1.5rem;
+  }
   .sm {
     font-size: 2.5rem;
+  }
+  .sm--cv {
+    font-size: 2.3rem;
   }
 }
 
@@ -591,8 +603,14 @@ h2 {
   .social-media__img {
     margin: 2rem 0 0 2rem;
   }
+  .social-media--cv .social-media__img {
+    margin: 2rem 2rem 0 2rem;
+  }
   .sm {
     font-size: 3rem;
+  }
+  .sm--cv {
+    font-size: 2.8rem;
   }
 }
 
@@ -631,18 +649,16 @@ h2 {
       align-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 1200px;
+  width: 80vw;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
 .container__box {
   position: relative;
-  width: 300px;
-  height: 400px;
-  margin: 40px;
-  background: url(https://www.pexels.com/sv-se/foto/ljus-konst-natt-mork-3342739/);
-  background-size: contain;
+  width: 400px;
+  height: 500px;
+  margin: 4.5rem;
   border-radius: 5px;
   box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
   -webkit-box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
@@ -663,8 +679,8 @@ h2 {
   width: 100%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transform: translate3d(0, 100%, 75px);
-          transform: translate3d(0, 100%, 75px);
+  -webkit-transform: translate3d(0, 140%, 75px);
+          transform: translate3d(0, 140%, 75px);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
@@ -686,18 +702,38 @@ h2 {
   z-index: 1;
 }
 
-.container__box:hover .container__box__name {
+.container__box img {
+  width: 400px;
+  height: 500px;
+}
+
+.container__box__product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 300px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+          transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+}
+
+body.hasHover .container__box:hover .container__box__name {
   top: 40px;
   opacity: 1;
 }
 
-.container__box:hover .container__box__btn {
+body.hasHover .container__box:hover .container__box__btn {
   bottom: 30px;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .container__box__btn {
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -705,8 +741,7 @@ h2 {
           transform-style: preserve-3d;
   -webkit-transform: translate3d(-50%, -180%, 75px);
           transform: translate3d(-50%, -180%, 75px);
-  color: rgba(254, 80, 87, 0.5);
-  background-color: #f4a261;
+  color: rgba(104, 7, 123, 0.5);
   height: 3rem;
   padding: 15px 25px 25px 25px;
   border-radius: 50px;
@@ -745,57 +780,49 @@ h2 {
   transition: 0.5s;
 }
 
-.container__box:hover::before, .container__box:hover::after {
-  opacity: 0.4;
+body.hasHover .container__box:hover::before,
+body.hasHover .container__box:hover::after {
+  opacity: 0.2;
+}
+
+.a-neon {
+  color: #ccc5b9;
+  text-shadow: 0 0 20px #039bad;
+}
+
+.a-neon:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -1;
+  color: #039bad;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+}
+
+.a-neon:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #138b98;
+  z-index: -2;
+  opacity: 0.5;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
 }
 
 @media screen and (max-width: 481px) and (hover: none) {
   .container {
-    width: 100vw;
-  }
-  .container__box {
-    position: relative;
-    width: 250px;
-    height: 300px;
-    margin: 30px;
-  }
-  .container:hover .container__box__name {
-    top: 40px;
-    opacity: 1;
-  }
-  .container:hover .container__box__btn {
-    bottom: 30px;
-    opacity: 0.9;
-  }
-  .container__btn {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-transform: translate3d(-50%, -80%, 75px);
-            transform: translate3d(-50%, -80%, 75px);
-    color: rgba(254, 80, 87, 0.5);
-    background-color: #f5dfbb;
-    height: 3rem;
-    padding: 15px 25px 25px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    -webkit-transition: 0.7s;
-    transition: 0.7s;
-    opacity: 0;
-    z-index: 10;
-  }
-  .container__box::before {
-    font-size: 4rem;
-    opacity: 0.3;
-  }
-  .container__box::after {
-    font-size: 4rem;
-    opacity: 0.3;
-  }
-  .container__box:hover::before, .container__box:hover::after {
-    opacity: 0.4;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 70vw;
   }
 }
 
@@ -1060,7 +1087,7 @@ h2 {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .skills-container .mb-2 {
+  .skills-container .skill {
     padding: 0 1rem;
   }
   .timeline__card .timeline-head {
@@ -1343,7 +1370,7 @@ h2 {
           transform: scaleX(0);
 }
 
-.border-underline:hover::before,
+body.hasHover .border-underline:hover::before,
 .border-underline:focus::before {
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -1407,7 +1434,7 @@ h2 {
           transform-origin: left;
 }
 
-.contact-btn-container .contact-btn:hover::before, .contact-btn-container .contact-btn:focus::before {
+body.hasHover .contact-btn-container .contact-btn:hover::before, .contact-btn-container .contact-btn:focus::before {
   -webkit-transition: -webkit-transform 500ms ease-in-out;
   transition: -webkit-transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out;
@@ -1416,7 +1443,7 @@ h2 {
           transform: scaleX(1);
 }
 
-.contact-btn-container .contact-btn:hover, .contact-btn-container .contact-btn:focus {
+body.hasHover .contact-btn-container .contact-btn:hover, .contact-btn-container .contact-btn:focus {
   color: #1b1b1b;
 }
 

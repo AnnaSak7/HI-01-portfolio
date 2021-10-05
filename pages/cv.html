@@ -40,11 +40,13 @@
     <header>
       <div class="header">
         <label class="logo">
+          <a href="../index.html">
           <img
             class="logo-image"
            src="../images/kamon-logo.png"
            alt="kamon logo"
           />
+        </a>
         </label>
         <nav class="navbar">
           <div class="hamburger-menu">
@@ -136,7 +138,7 @@
             </div>
             <div class="skills-container row">
               <div class="skills">
-                <div class="mb-2">
+                <div class="skill">
                   <span>HTML</span>
                   <div class="progress">
                     <div
@@ -153,7 +155,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="mb-2">
+                <div class="skill">
                   <span>CSS</span>
                   <div class="progress">
                     <div
@@ -170,7 +172,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="mb-2">
+                <div class="skill">
                   <span>JavaScript</span>
                   <div class="progress">
                     <div
@@ -191,7 +193,7 @@
               </div>
 
               <div class="skills">
-              <div class="mb-2">
+              <div class="skill">
                 <span>React JS</span>
                 <div class="progress">
                   <div
@@ -207,7 +209,7 @@
                   ></div>
                 </div>
               </div>
-              <div class="mb-2">
+              <div class="skill">
                 <span>Java</span>
                 <div class="progress">
                   <div
@@ -224,8 +226,8 @@
                   ></div>
                 </div>
               </div>
-              <div class="mb-2">
-                <span>Adobe Photoshop</span>
+              <div class="skill">
+                <span>Figma</span>
                 <div class="progress">
                   <div
                     class="progress-bar bgColor aos0init aos-animate"
@@ -234,8 +236,8 @@
                     data-aos-duration="800"
                     data-aos-delay="1200"
                     data-aos-anchor=".skills-container"
-                    style="width: 50%"
-                    aria-valuenow="50"
+                    style="width: 40%"
+                    aria-valuenow="40"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   ></div>
@@ -332,7 +334,9 @@
       </div>
     </main>
 
-    <script src="../scripts/script.js"></script>
+    <script src="../scripts/script.js">
+    watchForHover();
+    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
