@@ -1,9 +1,10 @@
-@import 'variables.scss';
+@import './variables';
 
-@mixin flexCenter {
+@mixin flexCenter($direction) {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: $direction;
 }
 
 * {
@@ -35,12 +36,12 @@ h2 {
 
 ////// Navbar ///////////////////////////////////////
 .navbar {
-  width: 45vw;
+  width: 100vw;
   height: 100vh;
   background-color: $ow;
   position: fixed;
   top: 0;
-  right: -70vw;
+  right: -100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,8 +214,8 @@ h2 {
 ///*index page -----------------------*////////////////////////////////
 
 .cover {
-  @include flexCenter();
-  flex-direction: column;
+  @include flexCenter(column);
+  //flex-direction: column;
   width: 100vw;
   height: 100vh;
 
@@ -230,7 +231,7 @@ h2 {
     width: 80vw;
     color: $tq;
     font-family: 'Rye', cursive;
-    font-size: 2em;
+    font-size: 5rem;
     font-weight: 900;
     padding: 8px 12px;
     text-align: end;
@@ -238,7 +239,7 @@ h2 {
 
     p {
       font-family: 'Rye', cursive;
-      font-size: 1.5rem;
+      font-size: 3rem;
       text-align: end;
       color: $orange;
     }
@@ -355,17 +356,13 @@ h2 {
 ///* Portfolio page --------------------*/////////////////////////
 
 .work_gallery {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  @include flexCenter(row);
   min-height: 100vh;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
+  @include flexCenter(row);
   align-content: center;
-  align-items: center;
   flex-wrap: wrap;
   width: 1200px;
   transform-style: preserve-3d;
@@ -536,8 +533,7 @@ h2 {
 ///* CV ---------------*/////////////////////////////////////
 
 .profile-container {
-  @include flexCenter();
-  flex-direction: column;
+  @include flexCenter(column);
   width: 100vw;
 
   &__img img {
@@ -549,9 +545,7 @@ h2 {
   &__name {
     width: 80vw;
     margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexCenter(column);
 
     svg {
       width: 60vw;
@@ -564,13 +558,11 @@ h2 {
   }
 }
 .cards-container {
-  @include flexCenter();
-  flex-direction: column;
+  @include flexCenter(column);
   margin: 10px 20px;
 }
 .info-container {
-  @include flexCenter();
-  flex-direction: column;
+  @include flexCenter(column);
   width: 90vw;
   padding: 1rem 0.5rem;
   border-radius: 7px;
@@ -592,9 +584,9 @@ h2 {
 }
 
 .skills-container {
-  @include flexCenter();
+  @include flexCenter(column);
   width: 100%;
-  flex-direction: column;
+
   .skills {
     width: 80%;
 
@@ -671,7 +663,7 @@ h2 {
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $mobile) {
   .profile-container {
     display: flex;
     flex-direction: row;
@@ -717,7 +709,7 @@ h2 {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: $tablet) {
   .info-container {
     h2 {
       font-size: 1.8rem;
@@ -761,7 +753,7 @@ h2 {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: $desktop) {
   .info-bg {
     padding: 50px;
   }
@@ -825,23 +817,20 @@ h2 {
 
 ///* Contact ---------------*////////////////////////////
 .contact-container {
-  @include flexCenter();
-  flex-direction: column;
+  @include flexCenter(column);
+
   &__form {
-    @include flexCenter();
-    flex-direction: column;
+    @include flexCenter(column);
     margin-top: 5rem;
     &__header {
-      @include flexCenter();
-      flex-direction: column;
+      @include flexCenter(column);
 
       h1 {
         font-size: 2rem;
         color: $tq;
       }
       .contactMe-p {
-        @include flexCenter();
-        flex-direction: column;
+        @include flexCenter(column);
         text-align: center;
         padding: 30px;
         font-size: 1rem;
@@ -853,8 +842,7 @@ h2 {
       // margin-right: right;
 
       &__container {
-        @include flexCenter();
-        flex-direction: column;
+        @include flexCenter(column);
         height: auto;
         padding: 0 20px;
         border-radius: 10px;
@@ -885,8 +873,7 @@ h2 {
   }
 
   &__infoMap {
-    @include flexCenter();
-    flex-direction: column;
+    @include flexCenter(column);
 
     .infoMap-map {
       iframe {
@@ -897,11 +884,8 @@ h2 {
 
     .infoMap-info {
       &__box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flexCenter(column);
         align-content: center;
-        align-items: center;
         margin: 1rem 1rem;
         padding: 2rem;
         border-radius: 10px;
@@ -990,11 +974,10 @@ h2 {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: $tablet) {
   .contact-container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter(row);
+
     &__form {
       height: 100vh;
       margin-top: 4rem;
@@ -1013,13 +996,9 @@ h2 {
       .form {
         display: flex;
         flex-direction: column;
-        // margin-right: right;
 
         &__container {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          @include flexCenter(column);
           height: auto;
           padding: 0 20px;
           border-radius: 10px;
@@ -1071,7 +1050,7 @@ h2 {
   }
 }
 
-@media screen and (min-width: 1439px) {
+@media screen and (min-width: $desktop) {
   .contact-container {
     gap: 35px;
     &__form {
@@ -1090,10 +1069,7 @@ h2 {
         flex-direction: column;
 
         &__container {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          @include flexCenter(column);
           height: auto;
           padding: 0 20px;
           border-radius: 10px;
@@ -1143,9 +1119,7 @@ h2 {
 ///* Thank You -------------/////////////////////////////////////////
 
 .thankyou {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter(column);
   height: 100vh;
   font-size: 2rem;
   color: $orange;
