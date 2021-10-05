@@ -39,6 +39,7 @@ h2 {
   width: 100vw;
   height: 100vh;
   background-color: $ow;
+  opacity: 0.95;
   position: fixed;
   top: 0;
   right: -100vw;
@@ -101,8 +102,9 @@ h2 {
 .nav-link {
   text-decoration: none;
   font-size: 1.5rem;
+  opacity: 1;
   color: $tq;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   position: relative;
@@ -231,7 +233,7 @@ h2 {
     width: 80vw;
     color: $tq;
     font-family: 'Rye', cursive;
-    font-size: 5rem;
+    font-size: 2rem;
     font-weight: 900;
     padding: 8px 12px;
     text-align: end;
@@ -239,9 +241,67 @@ h2 {
 
     p {
       font-family: 'Rye', cursive;
-      font-size: 3rem;
+      font-size: 1.3rem;
       text-align: end;
       color: $orange;
+    }
+  }
+}
+
+@media screen and (min-width: $mobile) {
+  .cover {
+    @include flexCenter(column);
+    //flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    .name-container {
+      width: 70vw;
+    }
+
+    /* caption text */
+    .text {
+      width: 70vw;
+      font-size: 2.7rem;
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .cover {
+    .name-container {
+      width: 60vw;
+    }
+
+    /* caption text */
+    .text {
+      width: 60vw;
+      font-size: 3.6rem;
+      p {
+        font-size: 2.1rem;
+        margin-top: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .cover {
+    .name-container {
+      max-width: 1015px;
+    }
+
+    /* caption text */
+    .text {
+      max-width: 1015px;
+      font-size: 4rem;
+      p {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+      }
     }
   }
 }
@@ -322,7 +382,7 @@ h2 {
   display: flex;
 
   &__img {
-    margin: 1rem 0 0 1rem;
+    margin: 1rem 0 0 2rem;
   }
   &--cv {
     .social-media__img {
@@ -332,7 +392,7 @@ h2 {
 }
 
 .sm {
-  font-size: 1.5rem;
+  font-size: 2rem;
   justify-content: flex-end;
 
   &--cv {
@@ -353,6 +413,39 @@ h2 {
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+@media screen and (min-width: $mobile) {
+  .social-media {
+    &__img {
+      margin: 1.1rem 0 0 2rem;
+    }
+  }
+
+  .sm {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: $tablet) {
+  .social-media {
+    &__img {
+      margin: 1.5rem 0 0 1.5rem;
+    }
+  }
+
+  .sm {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .social-media {
+    &__img {
+      margin: 2rem 0 0 2rem;
+    }
+  }
+
+  .sm {
+    font-size: 3rem;
+  }
+}
 ///* Portfolio page --------------------*/////////////////////////
 
 .work_gallery {

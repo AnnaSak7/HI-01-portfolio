@@ -35,6 +35,7 @@ h2 {
   width: 100vw;
   height: 100vh;
   background-color: #ccc5b9;
+  opacity: 0.95;
   position: fixed;
   top: 0;
   right: -100vw;
@@ -113,8 +114,9 @@ h2 {
 .nav-link {
   text-decoration: none;
   font-size: 1.5rem;
+  opacity: 1;
   color: #0abfbc;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   position: relative;
@@ -264,7 +266,7 @@ h2 {
   width: 80vw;
   color: #0abfbc;
   font-family: 'Rye', cursive;
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: 900;
   padding: 8px 12px;
   text-align: end;
@@ -273,9 +275,74 @@ h2 {
 
 .cover .text p {
   font-family: 'Rye', cursive;
-  font-size: 3rem;
+  font-size: 1.3rem;
   text-align: end;
   color: #f4a261;
+}
+
+@media screen and (min-width: 700px) {
+  .cover {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    /* caption text */
+  }
+  .cover .name-container {
+    width: 70vw;
+  }
+  .cover .text {
+    width: 70vw;
+    font-size: 2.7rem;
+  }
+  .cover .text p {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cover {
+    /* caption text */
+  }
+  .cover .name-container {
+    width: 60vw;
+  }
+  .cover .text {
+    width: 60vw;
+    font-size: 3.6rem;
+  }
+  .cover .text p {
+    font-size: 2.1rem;
+    margin-top: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .cover {
+    /* caption text */
+  }
+  .cover .name-container {
+    max-width: 1015px;
+  }
+  .cover .text {
+    max-width: 1015px;
+    font-size: 4rem;
+  }
+  .cover .text p {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
 }
 
 #logo path {
@@ -379,7 +446,7 @@ h2 {
 }
 
 .social-media__img {
-  margin: 1rem 0 0 1rem;
+  margin: 1rem 0 0 2rem;
 }
 
 .social-media--cv .social-media__img {
@@ -387,7 +454,7 @@ h2 {
 }
 
 .sm {
-  font-size: 1.5rem;
+  font-size: 2rem;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -418,6 +485,33 @@ h2 {
   transition: -webkit-transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media screen and (min-width: 700px) {
+  .social-media__img {
+    margin: 1.1rem 0 0 2rem;
+  }
+  .sm {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .social-media__img {
+    margin: 1.5rem 0 0 1.5rem;
+  }
+  .sm {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .social-media__img {
+    margin: 2rem 0 0 2rem;
+  }
+  .sm {
+    font-size: 3rem;
+  }
 }
 
 .work_gallery {
