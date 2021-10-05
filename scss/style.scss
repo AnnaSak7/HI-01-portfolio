@@ -230,6 +230,8 @@ h2 {
 
   /* caption text */
   .text {
+    display: flex;
+    flex-direction: column;
     width: 80vw;
     color: $tq;
     font-family: 'Rye', cursive;
@@ -239,11 +241,79 @@ h2 {
     text-align: end;
     margin-top: 1rem;
 
-    p {
-      font-family: 'Rye', cursive;
-      font-size: 1.3rem;
-      text-align: end;
-      color: $orange;
+    .neon-container {
+      position: relative;
+      margin-bottom: 5rem;
+      .neon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        color: $tq;
+        text-shadow: 0 0 20px #039bad;
+
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          color: #039bad;
+          filter: blur(10px);
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #138b98;
+          z-index: -2;
+          opacity: 0.5;
+          filter: blur(30px);
+        }
+      }
+    }
+    .p-neon-container {
+      position: relative;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      .p-neon {
+        font-size: 1.3rem;
+        text-align: end;
+        color: $orange;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        color: $orange;
+        text-shadow: 0 0 20px #f78800;
+
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          color: #f78800;
+          filter: blur(10px);
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #f78800;
+          z-index: -2;
+          opacity: 0.5;
+          filter: blur(30px);
+        }
+      }
     }
   }
 }
@@ -465,7 +535,9 @@ h2 {
     width: 300px;
     height: 400px;
     margin: 40px;
-    background: rgba(254, 80, 87, 0.8);
+    background: url(https://www.pexels.com/sv-se/foto/ljus-konst-natt-mork-3342739/);
+    background-size: contain;
+    //background: rgba(254, 80, 87, 0.8);
     border-radius: 5px;
     box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
     -webkit-box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
@@ -482,7 +554,7 @@ h2 {
       color: $ow;
       width: 100%;
       transform-style: preserve-3d;
-      transform: translate3d(0, 150%, 75px);
+      transform: translate3d(0, 100%, 75px);
       transition: 0.5s;
       opacity: 0;
       z-index: 5;
