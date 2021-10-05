@@ -1103,7 +1103,7 @@ h2 {
     @include flexCenter(column);
 
     .infoMap-map {
-      iframe {
+      #map {
         width: 90vw;
         height: 25rem;
       }
@@ -1202,10 +1202,6 @@ h2 {
   }
 }
 
-#map {
-  height: 500px;
-}
-
 @media screen and (min-width: $tablet) {
   .contact-container {
     @include flexCenter(row);
@@ -1254,7 +1250,7 @@ h2 {
 
       .infoMap-map {
         margin: 2rem;
-        iframe {
+        #map {
           width: 40vw;
           height: 27rem;
         }
