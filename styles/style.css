@@ -1489,6 +1489,10 @@ h2 {
   color: #1b1b1b;
 }
 
+#map {
+  height: 500px;
+}
+
 @media screen and (min-width: 1000px) {
   .contact-container {
     display: -webkit-box;

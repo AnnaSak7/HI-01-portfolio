@@ -68,11 +68,13 @@ function createTag(tag, name) {
 ////////////////////////////////////////////////////////////
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-    mapId: 'MAP_ID',
+    center: { lat: 59.360382156655604, lng: 17.96468129493811 },
+    zoom: 18, // 0 - 22
+    mapId: '245f27feddf727eb',
   });
 }
+
+//59.360382156655604, 17.96468129493811
 
 ////////////////////////////////////////////////////////////////
 function watchForHover() {

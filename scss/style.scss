@@ -1202,6 +1202,10 @@ h2 {
   }
 }
 
+#map {
+  height: 500px;
+}
+
 @media screen and (min-width: $tablet) {
   .contact-container {
     @include flexCenter(row);
