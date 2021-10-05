@@ -1102,7 +1102,7 @@ body.hasHover .icon:hover i {
 }
 
 .border-underline:focus::before,
-.border-underline:hover::before {
+body.hasHover .border-underline:hover::before {
   transform: scale(1);
 }
 
@@ -1149,14 +1149,14 @@ body.hasHover .icon:hover i {
       transform-origin: left;
     }
 
-    body.hasHover &:hover::before,
-    &:focus::before {
+    &:focus::before,
+    body.hasHover &:hover::before {
       transition: transform 500ms ease-in-out;
       transform: scaleX(1);
     }
 
-    &:hover,
-    &:focus {
+    &:focus,
+    body.hasHover &:hover {
       color: #1b1b1b;
     }
   }

@@ -1375,7 +1375,7 @@ body.hasHover .container__box:hover .container__box__btn {
 }
 
 .border-underline:focus::before,
-.border-underline:hover::before {
+body.hasHover .border-underline:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
@@ -1438,7 +1438,8 @@ body.hasHover .container__box:hover .container__box__btn {
           transform-origin: left;
 }
 
-body.hasHover .contact-btn-container .contact-btn:hover::before, .contact-btn-container .contact-btn:focus::before {
+.contact-btn-container .contact-btn:focus::before,
+body.hasHover .contact-btn-container .contact-btn:hover::before {
   -webkit-transition: -webkit-transform 500ms ease-in-out;
   transition: -webkit-transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out;
@@ -1447,7 +1448,8 @@ body.hasHover .contact-btn-container .contact-btn:hover::before, .contact-btn-co
           transform: scaleX(1);
 }
 
-.contact-btn-container .contact-btn:hover, .contact-btn-container .contact-btn:focus {
+.contact-btn-container .contact-btn:focus,
+body.hasHover .contact-btn-container .contact-btn:hover {
   color: #1b1b1b;
 }
 
