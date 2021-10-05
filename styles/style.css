@@ -152,7 +152,9 @@ h2 {
 }
 
 body.hasHover .nav-link:hover::before,
-body.hasHover .nav-link:hover::after {
+.nav-link:focus::before,
+body.hasHover .nav-link:hover::after,
+.nav-link:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
@@ -780,8 +782,7 @@ body.hasHover .container__box:hover .container__box__btn {
   transition: 0.5s;
 }
 
-body.hasHover .container__box:hover::before,
-body.hasHover .container__box:hover::after {
+.container__box:hover::before, .container__box:hover::after {
   opacity: 0.2;
 }
 
@@ -823,6 +824,9 @@ body.hasHover .container__box:hover::after {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 70vw;
+    width: 200px;
+    height: 300px;
+    margin: 4rem;
   }
 }
 
@@ -1370,8 +1374,8 @@ body.hasHover .container__box:hover::after {
           transform: scaleX(0);
 }
 
-body.hasHover .border-underline:hover::before,
-.border-underline:focus::before {
+.border-underline:focus::before,
+.border-underline:hover::before {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
@@ -1443,7 +1447,7 @@ body.hasHover .contact-btn-container .contact-btn:hover::before, .contact-btn-co
           transform: scaleX(1);
 }
 
-body.hasHover .contact-btn-container .contact-btn:hover, .contact-btn-container .contact-btn:focus {
+.contact-btn-container .contact-btn:hover, .contact-btn-container .contact-btn:focus {
   color: #1b1b1b;
 }
 

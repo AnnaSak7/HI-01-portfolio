@@ -134,7 +134,9 @@ h2 {
 }
 
 body.hasHover .nav-link:hover::before,
-body.hasHover .nav-link:hover::after {
+.nav-link:focus::before,
+body.hasHover .nav-link:hover::after,
+.nav-link:hover::after {
   transform: scaleX(1);
 }
 
@@ -670,8 +672,8 @@ body.hasHover .icon:hover i {
     transition: 0.5s;
   }
 
-  body.hasHover &__box:hover::before,
-  body.hasHover &__box:hover::after {
+  &__box:hover::before,
+  &__box:hover::after {
     opacity: 0.2;
   }
 }
@@ -708,6 +710,10 @@ body.hasHover .icon:hover i {
   .container {
     flex-direction: column;
     width: 70vw;
+
+    width: 200px;
+    height: 300px;
+    margin: 4rem;
   }
 }
 
@@ -1094,8 +1100,9 @@ body.hasHover .icon:hover i {
   transform-origin: 0;
   transform: scaleX(0);
 }
-body.hasHover .border-underline:hover::before,
-.border-underline:focus::before {
+
+.border-underline:focus::before,
+.border-underline:hover::before {
   transform: scale(1);
 }
 
@@ -1148,7 +1155,7 @@ body.hasHover .border-underline:hover::before,
       transform: scaleX(1);
     }
 
-    body.hasHover &:hover,
+    &:hover,
     &:focus {
       color: #1b1b1b;
     }

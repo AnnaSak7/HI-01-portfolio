@@ -101,3 +101,5 @@ function watchForHover() {
 
   enableHover();
 }
+
+watchForHover();
