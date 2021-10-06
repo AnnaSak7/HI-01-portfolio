@@ -47,7 +47,7 @@ function initMap() {
     map,
     title: 'AS',
     icon: {
-      url: 'marker.svg',
+      url: './images/marker.svg',
       scaledSize: new google.maps.Size(38, 31),
     },
     animation: google.maps.Animation.DROP,
