@@ -1,11 +1,5 @@
 @import './variables';
-
-@mixin flexCenter($direction) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
+@import './mixins';
 
 * {
   margin: 0;
@@ -41,7 +35,7 @@ h2 {
   background-color: $ow;
   opacity: 0.95;
   position: fixed;
-  top: 0;
+  //top: 0;
   right: -100vw;
   display: flex;
   justify-content: center;
@@ -140,81 +134,6 @@ h2 {
   transform: scaleX(1);
 }
 
-@media screen and (min-width: 700px) {
-  .logo-image {
-    height: 70px;
-    top: 30px;
-    left: 40px;
-  }
-  .hamburger-menu {
-    width: 55px;
-    height: 55px;
-    top: 30px;
-    right: 40px;
-  }
-  .change .line-1 {
-    transform: rotateZ(-405deg) translate(-13px, 11px);
-  }
-
-  .change .line-3 {
-    transform: rotateZ(405deg) translate(-13px, -11px);
-  }
-
-  .nav-link {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .logo-image {
-    height: 90px;
-    top: 40px;
-    right: 50px;
-  }
-  .hamburger-menu {
-    width: 75px;
-    height: 75px;
-    top: 40px;
-    right: 50px;
-  }
-  .change .line-1 {
-    transform: rotateZ(-405deg) translate(-18px, 16px);
-  }
-
-  .change .line-3 {
-    transform: rotateZ(405deg) translate(-18px, -16px);
-  }
-
-  .nav-link {
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .logo-image {
-    height: 110px;
-    top: 60px;
-    right: 90px;
-  }
-  .hamburger-menu {
-    width: 100px;
-    height: 100px;
-    top: 60px;
-    right: 90px;
-  }
-  .change .line-1 {
-    transform: rotateZ(-405deg) translate(-24px, 21px);
-  }
-
-  .change .line-3 {
-    transform: rotateZ(405deg) translate(-24px, -21px);
-  }
-
-  .nav-link {
-    font-size: 3rem;
-  }
-}
-
 ///*index page -----------------------*////////////////////////////////
 
 .cover {
@@ -237,7 +156,7 @@ h2 {
     width: 80vw;
     color: $tq;
     font-family: 'Rye', cursive;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 900;
     padding: 8px 12px;
     text-align: end;
@@ -245,7 +164,7 @@ h2 {
 
     .neon-container {
       position: relative;
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
       .neon {
         position: absolute;
         top: 0;
@@ -280,10 +199,10 @@ h2 {
     }
     .p-neon-container {
       position: relative;
-      margin-top: 2rem;
+      margin-top: 0.5rem;
       margin-bottom: 2rem;
       .p-neon {
-        font-size: 1.3rem;
+        font-size: 1rem;
         text-align: end;
         color: $orange;
         position: absolute;
@@ -315,64 +234,6 @@ h2 {
           opacity: 0.5;
           filter: blur(30px);
         }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $mobile) {
-  .cover {
-    @include flexCenter(column);
-    //flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-
-    .name-container {
-      width: 70vw;
-    }
-
-    /* caption text */
-    .text {
-      width: 70vw;
-      font-size: 2.7rem;
-      p {
-        font-size: 1.8rem;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $tablet) {
-  .cover {
-    .name-container {
-      width: 60vw;
-    }
-
-    /* caption text */
-    .text {
-      width: 60vw;
-      font-size: 3.6rem;
-      p {
-        font-size: 2.1rem;
-        margin-top: 0.9rem;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .cover {
-    .name-container {
-      max-width: 1015px;
-    }
-
-    /* caption text */
-    .text {
-      max-width: 1015px;
-      font-size: 4rem;
-      p {
-        font-size: 2.5rem;
-        margin-top: 1rem;
       }
     }
   }
@@ -454,7 +315,7 @@ h2 {
   display: flex;
 
   &__img {
-    margin: 1rem 0 0 2rem;
+    margin: 1rem 0 0 1rem;
   }
   &--cv {
     .social-media__img {
@@ -464,7 +325,7 @@ h2 {
 }
 
 .sm {
-  font-size: 2rem;
+  font-size: 1.3rem;
   justify-content: flex-end;
 
   &--cv {
@@ -483,68 +344,9 @@ h2 {
   color: $red;
   transform: scale(1.5);
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  //transition:  property   duration   timing-function   delay|initial|inherit;
 }
 
-@media screen and (min-width: $mobile) {
-  .social-media {
-    &__img {
-      margin: 1.1rem 0 0 2rem;
-    }
-    &--cv {
-      .social-media__img {
-        margin: 1.1rem 1.1rem 0 1.1rem;
-      }
-    }
-  }
-
-  .sm {
-    font-size: 2.3rem;
-
-    &--cv {
-      font-size: 2rem;
-    }
-  }
-}
-@media screen and (min-width: $tablet) {
-  .social-media {
-    &__img {
-      margin: 1.5rem 0 0 1.5rem;
-    }
-    &--cv {
-      .social-media__img {
-        margin: 1.5rem 1.5rem 0 1.5rem;
-      }
-    }
-  }
-
-  .sm {
-    font-size: 2.5rem;
-
-    &--cv {
-      font-size: 2.3rem;
-    }
-  }
-}
-@media screen and (min-width: $desktop) {
-  .social-media {
-    &__img {
-      margin: 2rem 0 0 2rem;
-    }
-    &--cv {
-      .social-media__img {
-        margin: 2rem 2rem 0 2rem;
-      }
-    }
-  }
-
-  .sm {
-    font-size: 3rem;
-
-    &--cv {
-      font-size: 2.8rem;
-    }
-  }
-}
 ///* Portfolio page --------------------*/////////////////////////
 
 .work_gallery {
@@ -706,57 +508,6 @@ h2 {
   }
 }
 
-@media screen and (max-width: 481px) and (hover: none) {
-  .container {
-    flex-direction: column;
-    width: 70vw;
-
-    &__box {
-      width: 200px;
-      height: 300px;
-      margin: 4rem;
-
-      &__number {
-        font-size: 1.5rem;
-      }
-
-      img {
-        width: 200px;
-        height: 300px;
-      }
-      &__product {
-        position: absolute;
-        max-width: 200px;
-      }
-
-      &__btn {
-        font-size: 1rem;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform-style: preserve-3d;
-        transform: translate3d(-50%, -100%, 75px);
-        color: rgba(104, 7, 123, 0.5);
-        height: 2rem;
-        padding: 15px 25px 25px 25px;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: 0.7s;
-        opacity: 0;
-        z-index: 9;
-      }
-    }
-
-    &__box::before {
-      font-size: 2rem;
-    }
-
-    &__box::after {
-      font-size: 2rem;
-    }
-  }
-}
-
 ///* CV ---------------*/////////////////////////////////////
 
 .profile-container {
@@ -887,158 +638,6 @@ h2 {
   }
   p {
     font-size: 1rem;
-  }
-}
-
-@media screen and (min-width: $mobile) {
-  .profile-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-    &__img img {
-      width: 28vw;
-    }
-
-    &__name {
-      width: 40vw;
-
-      svg {
-        margin-top: 50px;
-        width: 40vw;
-      }
-
-      p {
-        margin-top: 1rem;
-      }
-    }
-  }
-  .timeline__card {
-    .timeline-head {
-      font-size: 2.2rem;
-    }
-
-    .timeline-body {
-      span {
-        font-size: 1rem;
-      }
-      p {
-        font-size: 1.3rem;
-      }
-    }
-  }
-  .email,
-  .phone,
-  .address {
-    p {
-      font-size: 1.2rem;
-    }
-  }
-}
-
-@media screen and (min-width: $tablet) {
-  .info-container {
-    h2 {
-      font-size: 1.8rem;
-    }
-  }
-
-  .info-bg {
-    padding: 30px;
-  }
-  .profile-container {
-    p {
-      font-size: 1.2rem;
-    }
-  }
-
-  .skills-container {
-    flex-direction: row;
-    .skill {
-      padding: 0 1rem;
-    }
-  }
-  .timeline__card {
-    .timeline-head {
-      font-size: 2.5rem;
-    }
-    .timeline-body {
-      span {
-        font-size: 1.2rem;
-      }
-      p {
-        font-size: 1.5rem;
-      }
-    }
-  }
-  .email,
-  .phone,
-  .address {
-    p {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .info-bg {
-    padding: 50px;
-  }
-  .email,
-  .phone,
-  .address {
-    p {
-      font-size: 1.8rem;
-    }
-  }
-
-  .profile-container {
-    justify-content: center;
-    gap: 120px;
-    &__img img {
-      max-width: 405px;
-      height: auto;
-    }
-
-    &__name {
-      svg {
-        margin-top: 50px;
-        max-width: 576px;
-      }
-
-      p {
-        margin-top: 1rem;
-        max-width: 576px;
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  .info-container {
-    max-width: 1280px;
-
-    &__title {
-      font-size: 1rem;
-    }
-    h2 {
-      font-size: 2.3rem;
-    }
-  }
-
-  .skills-container {
-    .skills {
-      width: 80%;
-
-      span {
-        font-size: 1.8rem;
-      }
-    }
-  }
-
-  .timeline {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
   }
 }
 
@@ -1202,148 +801,6 @@ h2 {
   }
 }
 
-@media screen and (min-width: $tablet) {
-  .contact-container {
-    @include flexCenter(row);
-
-    &__form {
-      height: 100vh;
-      margin-top: 4rem;
-      &__header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        h1 {
-          font-size: 2rem;
-        }
-        .contactMe-p {
-          font-size: 0.8rem;
-        }
-      }
-      .form {
-        display: flex;
-        flex-direction: column;
-
-        &__container {
-          @include flexCenter(column);
-          height: auto;
-          padding: 0 20px;
-          border-radius: 10px;
-
-          .contact-inputs {
-            &__box {
-              width: 50vw;
-              font-size: 0.9rem;
-            }
-            &__box::placeholder {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-    }
-
-    &__infoMap {
-      height: 100vh;
-      gap: 20px;
-
-      .infoMap-map {
-        margin: 2rem;
-        #map {
-          width: 40vw;
-          height: 27rem;
-        }
-      }
-
-      .infoMap-info {
-        &__box {
-          width: 40vw;
-          padding: 3rem;
-          font-size: 1.1rem;
-        }
-      }
-    }
-  }
-
-  .contact-btn-container {
-    .contact-btn {
-      font-size: 1.2rem;
-
-      &--download {
-        /////////// download button in CV page //////////////
-        font-size: 1.5rem;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .contact-container {
-    gap: 35px;
-    &__form {
-      height: 100vh;
-      max-width: 1210px;
-      &__header {
-        h1 {
-          font-size: 4rem;
-        }
-        .contactMe-p {
-          font-size: 1.2rem;
-        }
-      }
-      .form {
-        display: flex;
-        flex-direction: column;
-
-        &__container {
-          @include flexCenter(column);
-          height: auto;
-          padding: 0 20px;
-          border-radius: 10px;
-
-          .contact-inputs {
-            &__box {
-              max-width: 1200px;
-              font-size: 2rem;
-            }
-            &__box::placeholder {
-              font-size: 2rem;
-            }
-          }
-        }
-      }
-    }
-
-    &__infoMap {
-      height: 100vh;
-      gap: 20px;
-
-      .infoMap-map {
-        margin: 2rem;
-        iframe {
-          max-width: 1200px;
-          height: 30rem;
-        }
-      }
-
-      .infoMap-info {
-        &__box {
-          padding: 3rem;
-          font-size: 1.5rem;
-          max-width: 1200px;
-        }
-      }
-    }
-  }
-
-  .contact-btn-container {
-    .contact-btn {
-      font-size: 1.5rem;
-    }
-  }
-}
-
 ///* Thank You -------------/////////////////////////////////////////
 
 .thankyou {
@@ -1352,3 +809,10 @@ h2 {
   font-size: 2rem;
   color: $orange;
 }
+
+@import 'mq/index_mediaQuery';
+@import 'mq/logo-nav-mediaQuery';
+@import 'mq/socialMedia';
+@import 'mq/portfolio_mediaQuery';
+@import 'mq/cv_mediaQuery';
+@import 'mq/contact-mediaQuery';

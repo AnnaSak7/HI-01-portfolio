@@ -1,0 +1,141 @@
+@media screen and (min-width: $tablet) {
+  .contact-container {
+    @include flexCenter(row);
+
+    &__form {
+      height: 100vh;
+      margin-top: 4rem;
+      &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+          font-size: 2rem;
+        }
+        .contactMe-p {
+          font-size: 0.8rem;
+        }
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+
+        &__container {
+          @include flexCenter(column);
+          height: auto;
+          padding: 0 20px;
+          border-radius: 10px;
+
+          .contact-inputs {
+            &__box {
+              width: 50vw;
+              font-size: 0.9rem;
+            }
+            &__box::placeholder {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__infoMap {
+      height: 100vh;
+      gap: 20px;
+
+      .infoMap-map {
+        margin: 2rem;
+        #map {
+          width: 40vw;
+          height: 27rem;
+        }
+      }
+
+      .infoMap-info {
+        &__box {
+          width: 40vw;
+          padding: 3rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .contact-btn-container {
+    .contact-btn {
+      font-size: 1.2rem;
+
+      &--download {
+        /////////// download button in CV page //////////////
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .contact-container {
+    gap: 35px;
+    &__form {
+      height: 100vh;
+      max-width: 1210px;
+      &__header {
+        h1 {
+          font-size: 4rem;
+        }
+        .contactMe-p {
+          font-size: 1.2rem;
+        }
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+
+        &__container {
+          @include flexCenter(column);
+          height: auto;
+          padding: 0 20px;
+          border-radius: 10px;
+
+          .contact-inputs {
+            &__box {
+              max-width: 1200px;
+              font-size: 2rem;
+            }
+            &__box::placeholder {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__infoMap {
+      height: 100vh;
+      gap: 20px;
+
+      .infoMap-map {
+        margin: 2rem;
+        iframe {
+          max-width: 1200px;
+          height: 30rem;
+        }
+      }
+
+      .infoMap-info {
+        &__box {
+          padding: 3rem;
+          font-size: 1.5rem;
+          max-width: 1200px;
+        }
+      }
+    }
+  }
+
+  .contact-btn-container {
+    .contact-btn {
+      font-size: 1.5rem;
+    }
+  }
+}

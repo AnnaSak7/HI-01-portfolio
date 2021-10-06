@@ -1,0 +1,151 @@
+@media screen and (min-width: $mobile) {
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    &__img img {
+      width: 28vw;
+    }
+
+    &__name {
+      width: 40vw;
+
+      svg {
+        margin-top: 50px;
+        width: 40vw;
+      }
+
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .timeline__card {
+    .timeline-head {
+      font-size: 2.2rem;
+    }
+
+    .timeline-body {
+      span {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .email,
+  .phone,
+  .address {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .info-container {
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .info-bg {
+    padding: 30px;
+  }
+  .profile-container {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .skills-container {
+    flex-direction: row;
+    .skill {
+      padding: 0 1rem;
+    }
+  }
+  .timeline__card {
+    .timeline-head {
+      font-size: 2.5rem;
+    }
+    .timeline-body {
+      span {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .email,
+  .phone,
+  .address {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .info-bg {
+    padding: 50px;
+  }
+  .email,
+  .phone,
+  .address {
+    p {
+      font-size: 1.8rem;
+    }
+  }
+
+  .profile-container {
+    justify-content: center;
+    gap: 120px;
+    &__img img {
+      max-width: 405px;
+      height: auto;
+    }
+
+    &__name {
+      svg {
+        margin-top: 50px;
+        max-width: 576px;
+      }
+
+      p {
+        margin-top: 1rem;
+        max-width: 576px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .info-container {
+    max-width: 1280px;
+
+    &__title {
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 2.3rem;
+    }
+  }
+
+  .skills-container {
+    .skills {
+      width: 80%;
+
+      span {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .timeline {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+}

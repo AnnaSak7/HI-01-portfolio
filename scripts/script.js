@@ -6,35 +6,12 @@ menuIcon.addEventListener('click', () => {
   navbar.classList.toggle('change');
 });
 
-///////////////Intersection Observer /////////////////////////
-// const card = document.querySelector('.education');
-// const cards = document.querySelectorAll('.info-container');
-
-// const option = {
-//   root: null, // it is the viewport
-//   threshold: 0.25,
-//   rootMargin: '-150px',
-// };
-
-// const observer = new IntersectionObserver(function (entries, observer) {
-//   entries.forEach((entry) => {
-//     if (!entry.isIntersecting) {
-//       return; //'return' ends the function immediately
-//     }
-
-//     console.log(entry.target);
-//     entry.target.classList.toggle('visible');
-//     observer.unobserve(entry.target);
-//   });
-// }, option);
-
-// cards.forEach((card) => {
-//   observer.observe(card);
-// });
-
-// //observer.observe(card);
-
 ///////////// adding social media icons //////////////////////
+
+function getTag(id) {
+  return document.getElementById(id);
+}
+
 function createIcons(icons) {
   let div = getTag('sm');
   div.innerHTML += `<div class="social-media__img">
@@ -53,17 +30,6 @@ function addIcons() {
       }
     });
 }
-//////////////////////////////////////////////////////////////
-
-function getTag(id) {
-  return document.getElementById(id);
-}
-
-function createTag(tag, name) {
-  const elem = document.createElement(tag);
-  elem.className = name;
-  return elem;
-}
 
 ////////////////////////////////////////////////////////////
 function initMap() {
@@ -71,10 +37,49 @@ function initMap() {
     center: { lat: 59.360382156655604, lng: 17.96468129493811 },
     zoom: 18, // 0 - 22
     mapId: '245f27feddf727eb',
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+  });
+
+  new google.maps.Marker({
+    position: { lat: 59.36069693695108, lng: 17.96505734126205 },
+    map,
+    title: 'AS',
+    icon: {
+      url: 'marker.svg',
+      scaledSize: new google.maps.Size(38, 31),
+    },
+    animation: google.maps.Animation.DROP,
   });
 }
 
 //59.360382156655604, 17.96468129493811
+
+/// turning off the tilting effect when width is less than 1000px////////////////
+function destroyTilt() {
+  let tiltElements = document.querySelectorAll(`[data-tilt]`);
+  // look for [data-tilt] attributes
+  let mq = window.matchMedia('(max-width: 1000px)');
+  // .matchMedia() method returns a new MediaQueryList object that can be used to determine if the document matches the media query string, as well as to monitor the document to detect when it matches (or stops matching) that media query
+  if (mq.matches) {
+    for (let i = 0, len = tiltElements.length; i < len; i++) {
+      tiltElements[i].vanillaTilt.destroy();
+      // Destroy instance ---> tilt.tilt.destroy.call(tilt);
+    }
+  } else {
+    console.log('pedal');
+  }
+}
+
+/// rotate logo on scroll ///////////////////////////////////////////////////////////////////////
+
+const logo = document.querySelector('.logo-image');
+
+window.addEventListener('scroll', () => {
+  logo.style.transform = 'rotate(' + window.pageYOffset + 'deg)';
+  // window.pageYOffset returns the number of pixels that the document is currently scrolled vertically
+});
 
 ////////////////////////////////////////////////////////////////
 function watchForHover() {
@@ -106,26 +111,38 @@ function watchForHover() {
 
 watchForHover();
 
-/// turning off the tilting effect when width is less than 1000px////////////////////////////////////////////////////////////////////
-function destroyTilt() {
-  let tiltElements = document.querySelectorAll(`[data-tilt]`);
-  // look for [data-tilt] attributes
-  let mq = window.matchMedia('(max-width: 1000px)');
-  // .matchMedia() method returns a new MediaQueryList object that can be used to determine if the document matches the media query string, as well as to monitor the document to detect when it matches (or stops matching) that media query
-  if (mq.matches) {
-    for (let i = 0, len = tiltElements.length; i < len; i++) {
-      tiltElements[i].vanillaTilt.destroy();
-      // Destroy instance ---> tilt.tilt.destroy.call(tilt);
-    }
-  } else {
-    console.log('pedal');
-  }
-}
+///////////////Intersection Observer /////////////////////////
+// const card = document.querySelector('.education');
+// const cards = document.querySelectorAll('.info-container');
 
-/// rotate logo on scroll ///////////////////////////////////////////////////////////////////////
+// const option = {
+//   root: null, // it is the viewport
+//   threshold: 0.25,
+//   rootMargin: '-150px',
+// };
 
-const logo = document.querySelector('.logo-image');
+// const observer = new IntersectionObserver(function (entries, observer) {
+//   entries.forEach((entry) => {
+//     if (!entry.isIntersecting) {
+//       return; //'return' ends the function immediately
+//     }
 
-window.addEventListener('scroll', () => {
-  logo.style.transform = 'rotate(' + window.pageYOffset + 'deg)';
-});
+//     console.log(entry.target);
+//     entry.target.classList.toggle('visible');
+//     observer.unobserve(entry.target);
+//   });
+// }, option);
+
+// cards.forEach((card) => {
+//   observer.observe(card);
+// });
+
+// //observer.observe(card);
+
+//////////////////////////////////////////////////////////////
+
+// function createTag(tag, name) {
+//   const elem = document.createElement(tag);
+//   elem.className = name;
+//   return elem;
+// }
