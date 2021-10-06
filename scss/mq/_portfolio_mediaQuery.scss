@@ -8,6 +8,11 @@
       height: 300px;
       margin: 4rem;
 
+      &__name {
+        font-size: 0.5rem;
+        transform: translate3d(0, 120%, 75px);
+      }
+
       &__number {
         font-size: 1.5rem;
       }
@@ -22,13 +27,9 @@
       }
 
       &__btn {
-        font-size: 1rem;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform-style: preserve-3d;
+        font-size: 0.47rem;
         transform: translate3d(-50%, -100%, 75px);
-        color: rgba(104, 7, 123, 0.5);
+        color: $ow;
         height: 2rem;
         padding: 15px 25px 25px 25px;
         border-radius: 50px;

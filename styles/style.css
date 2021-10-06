@@ -557,7 +557,7 @@ h2 {
           transform-style: preserve-3d;
   -webkit-transform: translate3d(-50%, -180%, 75px);
           transform: translate3d(-50%, -180%, 75px);
-  color: rgba(104, 7, 123, 0.5);
+  color: #fe5057;
   height: 3rem;
   padding: 15px 25px 25px 25px;
   border-radius: 50px;
@@ -1344,6 +1344,11 @@ h2 {
     height: 300px;
     margin: 4rem;
   }
+  .container__box__name {
+    font-size: 0.5rem;
+    -webkit-transform: translate3d(0, 120%, 75px);
+            transform: translate3d(0, 120%, 75px);
+  }
   .container__box__number {
     font-size: 1.5rem;
   }
@@ -1356,15 +1361,10 @@ h2 {
     max-width: 200px;
   }
   .container__box__btn {
-    font-size: 1rem;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    font-size: 0.47rem;
     -webkit-transform: translate3d(-50%, -100%, 75px);
             transform: translate3d(-50%, -100%, 75px);
-    color: rgba(104, 7, 123, 0.5);
+    color: #ccc5b9;
     height: 2rem;
     padding: 15px 25px 25px 25px;
     border-radius: 50px;
