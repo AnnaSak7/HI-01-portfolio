@@ -34,7 +34,7 @@ function addIcons() {
 ////////////////////////////////////////////////////////////
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 59.360382156655604, lng: 17.96468129493811 },
+    center: { lat: 59.36069693695108, lng: 17.96505734126205 },
     zoom: 18, // 0 - 22
     mapId: '245f27feddf727eb',
     mapTypeControl: false,
@@ -48,7 +48,7 @@ function initMap() {
     title: 'AS',
     icon: {
       url: '../images/marker.svg',
-      scaledSize: new google.maps.Size(45, 50),
+      scaledSize: new google.maps.Size(55, 60),
     },
     animation: google.maps.Animation.DROP,
   });
