@@ -34,7 +34,7 @@ function addIcons() {
 ////////////////////////////////////////////////////////////
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 59.36069693695108, lng: 17.96505734126205 },
+    center: { lat: 59.36063371616734, lng: 17.965160775234317 },
     zoom: 18, // 0 - 22
     mapId: '245f27feddf727eb',
     mapTypeControl: false,
