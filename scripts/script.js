@@ -54,8 +54,6 @@ function initMap() {
   });
 }
 
-//59.360382156655604, 17.96468129493811
-
 /// turning off the tilting effect when width is less than 1000px////////////////
 function destroyTilt() {
   let tiltElements = document.querySelectorAll(`[data-tilt]`);
