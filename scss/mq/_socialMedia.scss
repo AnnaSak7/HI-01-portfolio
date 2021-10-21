@@ -1,0 +1,72 @@
+@media screen and (min-width: 400px) {
+  .social-media {
+    &__img {
+      margin: 1rem 0 0 1.5rem;
+    }
+  }
+
+  .sm {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (min-width: $mobile) {
+  .social-media {
+    &__img {
+      margin: 1.1rem 0 0 2rem;
+    }
+    &--cv {
+      .social-media__img {
+        margin: 1.1rem 1.1rem 0 1.1rem;
+      }
+    }
+  }
+
+  .sm {
+    font-size: 2.3rem;
+
+    &--cv {
+      font-size: 2rem;
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+  .social-media {
+    &__img {
+      margin: 1.5rem 0 0 1.5rem;
+    }
+    &--cv {
+      .social-media__img {
+        margin: 1.5rem 1.5rem 0 1.5rem;
+      }
+    }
+  }
+
+  .sm {
+    font-size: 2.5rem;
+
+    &--cv {
+      font-size: 2.3rem;
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .social-media {
+    &__img {
+      margin: 2rem 0 0 2rem;
+    }
+    &--cv {
+      .social-media__img {
+        margin: 2rem 2rem 0 2rem;
+      }
+    }
+  }
+
+  .sm {
+    font-size: 3rem;
+
+    &--cv {
+      font-size: 2.8rem;
+    }
+  }
+}

@@ -3,110 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Contact page for Portfolio of Anna Sakurai, web developer / front end developer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact page for Portfolio of Anna Sakurai, web developer / front end developer"
+    />
+    <script
+      src="https://kit.fontawesome.com/053ec86cc0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rye&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="../styles/style.css" />
     <title>Anna Sakurai portfolio - contact</title>
   </head>
   <body>
     <header>
-        <img
-          class="logo-image"
-          id="header-img"
-          src="../images/kamon.png"
-          alt="kamon logo"
-          itemprop="logo"
-        />
-
-        <nav class="navbar">
-          <div class="hamburger-menu">
-            <div class="line line-1"></div>
-            <div class="line line-2"></div>
-            <div class="line line-3"></div>
-          </div>
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cv.html">CV</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </nav>
+      <label class="logo">
+        <a href="../index.html">
+          <img
+            class="logo-image"
+            src="../images/kamon-logo.png"
+            alt="kamon logo"
+          />
+        </a>
+      </label>
+      <nav class="navbar">
+        <div class="hamburger-menu">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cv.html">CV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
       <div class="contact-container">
-        <h1>Contact Me</h1>
-        <div class="contactme-p">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic
-            asperiores provident explicabo doloremque debitis earum quas.
-            Consequatur, mollitia amet voluptate placeat fugit labore laborum
-          </p>
-        </div>
-          <form class="form">
-            <div class="form__containers form__container__contact">
-              <div class="contact-input-container">
-              <input
-                class="contact-inputs"
-                type="text"
-                placeholder="Name"
-                name="name"
-              />
-              <label
-                class="
-                  input__label input__label--hoshi input__label--hoshi-color-2
-                "
-              ></label>
-             </div>
-              <div class="contact-input-container">
-              <input
-                class="contact-inputs"
-                type="text"
-                placeholder="Email"
-                name="email"
-              />
-             </div>
-              <div class="contact-input-container">
-              <input
-                class="contact-inputs"
-                type="text"
-                placeholder="Subject"
-                name="subject"
-              />
-              </div>
-              <div class="contact-input-container">
-              <textarea
-                class="contact-inputs"
-                placeholder="Message"
-                name="msg"
-                cols="30"
-                rows="10"
-              ></textarea>
-              </div>
-            </div>  
-            <div class="form__containers contact-btn-container">
-                <div class="contact-send-container">
-                 <button class="contact-send-container__btn" type="submit">
-                  Send message
-                  </button>
-                </div>
+        <div class="contact-container__form">
+          <div class="contact-container__form__header">
+            <h1>Contact Me</h1>
+            <div class="contactMe-p">
+              <p>
+                I'd love to hear from you!<br />If you have requests and
+                questions, fill in the form and get in touch with me!
+              </p>
             </div>
-             
+          </div>
+          <form
+            class="form"
+            action="https://formsubmit.co/4240e9b6b21b01739e716e84804b66bf"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New email!!" />
+            <div class="form__container">
+              <div class="contact-inputs underline border-underline">
+                <input
+                  class="contact-inputs__box"
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="contact-inputs underline border-underline">
+                <input
+                  class="contact-inputs__box"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="contact-inputs underline border-underline">
+                <input
+                  class="contact-inputs__box"
+                  type="text"
+                  placeholder="Subject"
+                  name="subject"
+                />
+              </div>
+              <div class="contact-inputs underline border-underline">
+                <textarea
+                  class="contact-inputs__box"
+                  placeholder="Message"
+                  name="msg"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="contact-btn-container">
+              <button class="contact-btn" type="submit">Send message</button>
+            </div>
+            <input
+              type="hidden"
+              name="_next"
+              value="https://annasportfolio.netlify.app/pages/thankyou.html"
+            />
           </form>
+        </div>
+
+        <div class="contact-container__infoMap">
+          <!-- Map -->
+          <div class="infoMap-map">
+            <div id="map"></div>
+          </div>
+
+          <!-- info -->
+          <div class="infoMap-info">
+            <div class="infoMap-info__box">
+              <div>
+                e-mail :
+                <a href="mailto:annasakurai7@hotmail.com"
+                  >annasakurai7@hotmail.com</a
+                >
+              </div>
+              <div>address : Franstopsvägen Sundbyberg 17266</div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
 
     <script src="../scripts/script.js"></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB35-zJIXCNhcL0o5FM9JIR0EORqTeK1NA&map_ids=245f27feddf727eb&callback=initMap"
+      async
+    ></script>
   </body>
 </html>

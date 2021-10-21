@@ -1,0 +1,26 @@
+[
+  {
+    "id": "01",
+    "name": "github",
+    "url": "https://github.com/AnnaSak7",
+    "class": "fab fa-github"
+  },
+  {
+    "id": "02",
+    "name": "linkedIn",
+    "url": "https://www.linkedin.com/in/anna-sakurai-111-11101",
+    "class": "fab fa-linkedin"
+  },
+  {
+    "id": "03",
+    "name": "Instagram",
+    "url": "https://www.instagram.com/annakaiyamato/",
+    "class": "fab fa-instagram"
+  },
+  {
+    "id": "04",
+    "name": "Twitter",
+    "url": "https://twitter.com/AnnaKaiyaMato",
+    "class": "fab fa-twitter"
+  }
+]

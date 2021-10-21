@@ -1,0 +1,74 @@
+@media screen and (min-width: 700px) {
+  .logo-image {
+    height: 70px;
+    top: 30px;
+    left: 40px;
+  }
+  .hamburger-menu {
+    width: 55px;
+    height: 55px;
+    top: 30px;
+    right: 40px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-13px, 11px);
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-13px, -11px);
+  }
+
+  .nav-link {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .logo-image {
+    height: 90px;
+    top: 40px;
+    right: 50px;
+  }
+  .hamburger-menu {
+    width: 75px;
+    height: 75px;
+    top: 40px;
+    right: 50px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-18px, 16px);
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-18px, -16px);
+  }
+
+  .nav-link {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo-image {
+    height: 110px;
+    top: 60px;
+    right: 90px;
+  }
+  .hamburger-menu {
+    width: 100px;
+    height: 100px;
+    top: 60px;
+    right: 90px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-24px, 21px);
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-24px, -21px);
+  }
+
+  .nav-link {
+    font-size: 3rem;
+  }
+}

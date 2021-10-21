@@ -1,0 +1,23 @@
+//colors
+$tq: #0abfbc;
+$ow: #ccc5b9;
+$icon: #fcf7c5;
+$redOrange: #fe5057;
+$orange: #ffa600;
+$bgblack: #2a2a2a;
+$red: #fc354c;
+//$red: #b7094c;
+$gray: #7a7a7a;
+$gradient: linear-gradient(to bottom, #303846, #5f6673);
+
+$mobile: 700px;
+$tablet: 1000px;
+$desktop: 1440px;
+//fonts
+//$font: freight-sans-pro, sans-serif;;
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+// browser default context = 16px
+// @function rem($pixels, $context: 16) {
+//   @return (math.div($pixels, $context)) * 1rem;
+// }
