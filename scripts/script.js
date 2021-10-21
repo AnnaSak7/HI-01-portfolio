@@ -33,25 +33,9 @@ function addIcons() {
 
 ////////////////////////////////////////////////////////////
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 59.36063371616734, lng: 17.965160775234317 },
-    zoom: 18, // 0 - 22
-    mapId: '245f27feddf727eb',
-    mapTypeControl: false,
-    fullscreenControl: false,
-    streetViewControl: false,
-  });
+  map = new google.maps.Map(document.getElementById('map'), {});
 
-  new google.maps.Marker({
-    position: { lat: 59.36069693695108, lng: 17.96505734126205 },
-    map,
-    title: 'AS',
-    icon: {
-      url: '../images/marker.svg',
-      scaledSize: new google.maps.Size(55, 60),
-    },
-    animation: google.maps.Animation.DROP,
-  });
+  new google.maps.Marker({});
 }
 
 /// turning off the tilting effect when width is less than 1000px////////////////
@@ -108,39 +92,3 @@ function watchForHover() {
 }
 
 watchForHover();
-
-///////////////Intersection Observer /////////////////////////
-// const card = document.querySelector('.education');
-// const cards = document.querySelectorAll('.info-container');
-
-// const option = {
-//   root: null, // it is the viewport
-//   threshold: 0.25,
-//   rootMargin: '-150px',
-// };
-
-// const observer = new IntersectionObserver(function (entries, observer) {
-//   entries.forEach((entry) => {
-//     if (!entry.isIntersecting) {
-//       return; //'return' ends the function immediately
-//     }
-
-//     console.log(entry.target);
-//     entry.target.classList.toggle('visible');
-//     observer.unobserve(entry.target);
-//   });
-// }, option);
-
-// cards.forEach((card) => {
-//   observer.observe(card);
-// });
-
-// //observer.observe(card);
-
-//////////////////////////////////////////////////////////////
-
-// function createTag(tag, name) {
-//   const elem = document.createElement(tag);
-//   elem.className = name;
-//   return elem;
-// }
