@@ -33,9 +33,25 @@ function addIcons() {
 
 ////////////////////////////////////////////////////////////
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {});
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 59.36063371616734, lng: 17.965160775234317 },
+    zoom: 18, // 0 - 22
+    mapId: '245f27feddf727eb',
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+  });
 
-  new google.maps.Marker({});
+  new google.maps.Marker({
+    position: { lat: 59.36069693695108, lng: 17.96505734126205 },
+    map,
+    title: 'AS',
+    icon: {
+      url: '../images/marker.svg',
+      scaledSize: new google.maps.Size(55, 60),
+    },
+    animation: google.maps.Animation.DROP,
+  });
 }
 
 /// turning off the tilting effect when width is less than 1000px////////////////
