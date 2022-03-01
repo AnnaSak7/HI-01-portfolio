@@ -472,8 +472,8 @@ h2 {
 
 .container__box {
   position: relative;
-  width: 400px;
-  height: 500px;
+  width: 500px;
+  height: 300px;
   margin: 4.5rem;
   border-radius: 5px;
   box-shadow: -14px 21px 20px -1px rgba(110, 11, 11, 0.5);
@@ -508,8 +508,8 @@ h2 {
   bottom: 0;
   right: 0;
   opacity: 0.5;
-  color: #fff;
   font-size: 3rem;
+  color: #0abfbc;
   background-color: transparent;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -519,8 +519,8 @@ h2 {
 }
 
 .container__box img {
-  width: 400px;
-  height: 500px;
+  width: 500px;
+  height: 300px;
 }
 
 .container__box__product {
@@ -568,8 +568,36 @@ h2 {
   z-index: 9;
 }
 
-.container__box::before {
-  content: 'PROJECT';
+.container__01::before {
+  content: 'PORTFOLIO WEBSITE';
+  position: absolute;
+  top: 1rem;
+  left: -1.5rem;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #0abfbc;
+  font-style: italic;
+  opacity: 0.8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container__02::before {
+  content: 'NERD INVADERS GAME';
+  position: absolute;
+  top: 1rem;
+  left: -1.5rem;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #0abfbc;
+  font-style: italic;
+  opacity: 0.8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container__03::before {
+  content: 'BED TIME STORIES';
   position: absolute;
   top: 1rem;
   left: -1.5rem;
@@ -583,14 +611,9 @@ h2 {
 }
 
 .container__box::after {
-  content: 'NAME';
   position: absolute;
   bottom: 1rem;
   right: -1.3rem;
-  font-size: 4rem;
-  font-weight: 900;
-  color: #0abfbc;
-  font-style: italic;
   opacity: 0.8;
   -webkit-transition: 0.5s;
   transition: 0.5s;
